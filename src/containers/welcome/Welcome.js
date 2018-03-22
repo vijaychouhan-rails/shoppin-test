@@ -6,45 +6,56 @@ import CommonStyles from '../../CommonStyles';
 import constantsText from '../../constants/constantsText';
 import BasicStyles from './BasicStyles';
 
-class Welcome extends Component{
+class Welcome extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
   render() {
-    return(
+    return (
       <View
         style={CommonStyles.background}
       >
+        <Text
+          style={CommonStyles.HeadingText}
+        >
+          {constantsText.shoppin}
+        </Text>
         <TextInput
-          style={CommonStyles.inputText}
+          style={[CommonStyles.inputText, CommonStyles.marginBoth]}
+          underlineColorAndroid="transparent"
           placeholder={constantsText.website}
         />
         <TextInput
-          style={CommonStyles.inputText}
+          style={[CommonStyles.inputText, CommonStyles.marginBoth]}
+          underlineColorAndroid="transparent"
           placeholder={constantsText.email}
         />
         <TextInput
-          style={CommonStyles.inputText}
+          style={[CommonStyles.inputText, CommonStyles.marginBoth]}
+          underlineColorAndroid="transparent"
           placeholder={constantsText.password}
         />
         <Button
-          full dark
+          full
+          dark
           style={CommonStyles.buttonStyles}
+          onPress={Actions.dashboard}
         >
           <Text
             style={[CommonStyles.textStyle, CommonStyles.textColorWhite]}
-          >{constantsText.login}</Text>
+          >{constantsText.login}
+          </Text>
         </Button>
         <TouchableOpacity
           onPress={Actions.forgotPassword}
         >
           <Text
-            style={[BasicStyles.forgotpassword,CommonStyles.textColorSkyBlue]}
+            style={[BasicStyles.forgotPassword, CommonStyles.textColorSkyBlue]}
           >
             {constantsText.forgotPassword}
           </Text>
-          </TouchableOpacity>
+        </TouchableOpacity>
       </View>
     );
   }

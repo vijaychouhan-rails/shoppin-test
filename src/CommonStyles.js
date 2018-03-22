@@ -3,12 +3,20 @@ import colors from './constants/colors';
 import font from './constants/font';
 import standardFormat from './constants/standardFormat';
 
-const { width, height } = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 
 const CommonStyles = StyleSheet.create({
+  header_footer: {
+    width,
+    backgroundColor: colors.white,
+    shadowOffset:
+    {
+      height: 0, width: 0,
+    },
+    shadowOpacity: 0,
+    shadowColor: 'transparent',
+  },
   inputText: {
-    marginHorizontal: standardFormat.marginHorizontal,
-    marginVertical: standardFormat.marginVertical,
     color: colors.greyColor,
     width: standardFormat.inputWidth,
     fontSize: font.fontSize,
@@ -17,10 +25,14 @@ const CommonStyles = StyleSheet.create({
     paddingLeft: 5,
     paddingBottom: 5,
   },
+  marginBoth: {
+    marginHorizontal: standardFormat.marginHorizontal,
+    marginVertical: standardFormat.marginVertical,
+  },
   background: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: colors.white,
   },
   textStyle: {
     color: colors.white,
@@ -36,6 +48,12 @@ const CommonStyles = StyleSheet.create({
   },
   textColorWhite: {
     color: colors.white,
+  },
+  HeadingText: {
+    marginTop: standardFormat.headerMarginTop,
+    fontSize: font.headingSize,
+    fontWeight: font.fontBold,
+    color: colors.black,
   },
 
 });

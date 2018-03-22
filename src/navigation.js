@@ -4,6 +4,7 @@ import { Router, Scene } from 'react-native-router-flux';
 import store from './store';
 import Welcome from './containers/welcome/Welcome';
 import ForgotPassword from './containers/forgotPassword/ForgotPassword';
+import Dashboard from './containers/dashboard/Dashboard';
 
 const RouterWithRedux = connect()(Router);
 
@@ -19,6 +20,10 @@ const Navigator = () => (
         <Scene
           key="forgotPassword"
           component={ForgotPassword}
+        />
+        <Scene
+          key="dashboard"
+          component={Dashboard}
         />
       </Scene>
     </RouterWithRedux>

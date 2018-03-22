@@ -1,34 +1,37 @@
 import React, { Component } from 'react';
-import { View, TouchableOpacity, TextInput, Text } from 'react-native';
-import { Button } from 'native-base';
+import { TextInput, Text } from 'react-native';
+import { Button, Container } from 'native-base';
 import CommonStyles from '../../CommonStyles';
 import constantsText from '../../constants/constantsText';
+import HeaderView from '../../components/header/header';
+import BasicStyles from './BasicStyles';
 
-class ForgotPassword extends Component{
+class ForgotPassword extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
   render() {
-    return(
-      <View
-        style={CommonStyles.background}
+    return (
+      <Container
+        style={BasicStyles.background}
       >
-        
+        <HeaderView title={constantsText.forgotPasswordTitle} />
         <TextInput
-          style={CommonStyles.inputText}
+          style={[CommonStyles.inputText, BasicStyles.inputText]}
           placeholder={constantsText.email}
         />
         <Button
-          full dark
+          full
+          dark
           style={CommonStyles.buttonStyles}
         >
           <Text
             style={[CommonStyles.textStyle, CommonStyles.textColorWhite]}
-          >{constantsText.login}</Text>
+          >{constantsText.Change_Password}
+          </Text>
         </Button>
-
-      </View>
+      </Container>
     );
   }
 }

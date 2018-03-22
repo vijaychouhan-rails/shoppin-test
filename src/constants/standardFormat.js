@@ -7,6 +7,7 @@ const standardFormat = {
   marginHorizontal: width / 30,
   inputWidth: width / 1.5,
   buttonWidth: width / 15,
-}
+  headerMarginTop: width / 3,
+};
 
 export default standardFormat;
