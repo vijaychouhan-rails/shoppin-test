@@ -1,8 +1,10 @@
 const colors = {
-  greyColor: '#A9A9A9',
+  greyColor: '#808080',
   skyBlue: '#1e90ff',
   white: '#fff',
   black: '#000',
+  lightGrey: '#DCDCDC',
+  bluecolor: '#007CFA',
 };
 
 export default colors;

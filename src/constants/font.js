@@ -8,6 +8,7 @@ const font = {
   fontBold: 'bold',
   headingSize: 30,
   subHeading: 18,
+  searchFont: 16,
 };
 
 export default font;

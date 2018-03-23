@@ -10,7 +10,7 @@ import { TouchableOpacity, Text } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import BasicStyles from './BasicStyles';
-import CommonStyles from '../../CommonStyles';
+import CommonStyles from '../../assets/CommonStyles';
 
 const HeaderView = props => (
   <Header

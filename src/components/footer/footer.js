@@ -4,11 +4,10 @@ import {
   FooterTab,
   Button,
   Text,
-  Icon,
 } from 'native-base';
-import CommonStyles from '../../CommonStyles';
-// import { Actions } from 'react-native-router-flux';
-// import Icon from 'react-native-vector-icons/';
+import { Actions } from 'react-native-router-flux';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import CommonStyles from '../../assets/CommonStyles';
 import constantsText from '../../constants/constantsText';
 import BasicStyles from './BasicStyles';
 
@@ -20,23 +19,23 @@ const FooterView = () => (
       style={BasicStyles.footerTab}
     >
       <Button vertical>
-        <Icon name="star" size={20} />
+        <Icon name="star" size={20} style={BasicStyles.icon} />
         <Text
           style={BasicStyles.footerText}
         >
           {constantsText.home}
         </Text>
       </Button>
-      <Button vertical>
-        <Icon name="circle" size={20} />
+      <Button vertical onPress={Actions.orders}>
+        <Icon name="circle" size={20} style={BasicStyles.icon} />
         <Text
           style={BasicStyles.footerText}
         >
           {constantsText.orders}
         </Text>
       </Button>
-      <Button vertical>
-        <Icon name="square" size={20} />
+      <Button vertical onPress={Actions.products}>
+        <Icon name="square" size={20} style={BasicStyles.icon} />
         <Text
           style={BasicStyles.footerText}
         >
@@ -44,7 +43,7 @@ const FooterView = () => (
         </Text>
       </Button>
       <Button vertical>
-        <Icon name="triangle" size={20} />
+        <Icon name="triangle" size={20} style={BasicStyles.icon} />
         <Text
           style={BasicStyles.footerText}
         >

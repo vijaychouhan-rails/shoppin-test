@@ -10,6 +10,9 @@ const BasicStyles = StyleSheet.create({
   footerTab: {
     backgroundColor: colors.white,
   },
+  icon: {
+    color: colors.greyColor,
+  },
 });
 
 export default BasicStyles;

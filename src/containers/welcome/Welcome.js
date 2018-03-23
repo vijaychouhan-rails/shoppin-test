@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, TouchableOpacity, TextInput, Text } from 'react-native';
 import { Button } from 'native-base';
 import { Actions } from 'react-native-router-flux';
-import CommonStyles from '../../CommonStyles';
+import CommonStyles from '../../assets/CommonStyles';
 import constantsText from '../../constants/constantsText';
 import BasicStyles from './BasicStyles';
 

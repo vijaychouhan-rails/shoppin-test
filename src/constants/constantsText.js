@@ -12,6 +12,8 @@ const constantsText = {
   orders: 'Orders',
   products: 'Products',
   settings: 'Settings',
+  search: 'Search',
+  totalSale: 'Total Sales',
 };
 
 export default constantsText;

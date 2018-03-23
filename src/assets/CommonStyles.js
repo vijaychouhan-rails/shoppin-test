@@ -1,7 +1,7 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import colors from './constants/colors';
-import font from './constants/font';
-import standardFormat from './constants/standardFormat';
+import colors from '../constants/colors';
+import font from '../constants/font';
+import standardFormat from '../constants/standardFormat';
 
 const { width } = Dimensions.get('window');
 
@@ -17,7 +17,7 @@ const CommonStyles = StyleSheet.create({
     shadowColor: 'transparent',
   },
   inputText: {
-    color: colors.greyColor,
+    color: colors.black,
     width: standardFormat.inputWidth,
     fontSize: font.fontSize,
     borderBottomWidth: 1,
@@ -55,7 +55,46 @@ const CommonStyles = StyleSheet.create({
     fontWeight: font.fontBold,
     color: colors.black,
   },
-
+  search: {
+    flex: 1,
+    fontSize: font.searchFont,
+    color: colors.black
+  },
+  searchView: {
+    width: standardFormat.searchWidth,
+    flexDirection: 'row',
+    borderRadius: 10,
+    padding: 10,
+    backgroundColor: colors.lightGrey,
+    marginVertical: standardFormat.marginVertical,
+  },
+  searchIcon: {
+    color: colors.greyColor,
+    marginRight: 5,
+  },
+  microphone: {
+    color: colors.greyColor,
+    justifyContent: 'flex-end',
+  },
+  fontStyle: {
+    color: colors.black,
+    fontSize: font.fontSize,
+  },
+  rightIcon: {
+    justifyContent: 'flex-end',
+  },
+  spaceBetween: {
+    justifyContent: 'space-between',
+  },
+  spaceAround: {
+    justifyContent: 'space-around',
+  },
+  directionRow: {
+    flexDirection: 'row',
+  },
+  flexStyle: {
+    width: standardFormat.searchWidth,
+  },
 });
 
 export default CommonStyles;
