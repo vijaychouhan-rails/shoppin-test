@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, TextInput } from 'react-native';
 import { Container, Content } from 'native-base';
+import PropTypes from 'prop-types';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import HeaderView from '../../components/header/header';
 import constantsText from '../../constants/constantsText';
@@ -21,7 +22,7 @@ class ViewCollections extends Component {
       <Container
         style={CommonStyles.background}
       >
-        <HeaderView title={this.props} />
+        <HeaderView title={this.props.data} />
         <Content>
           <View
             style={CommonStyles.searchView}
@@ -48,5 +49,9 @@ class ViewCollections extends Component {
     );
   }
 }
+
+ViewCollections.propTypes = {
+  data: PropTypes.string.isRequired,
+};
 
 export default ViewCollections;

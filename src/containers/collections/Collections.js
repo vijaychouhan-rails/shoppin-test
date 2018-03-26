@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, TextInput } from 'react-native';
 import { Container, Content } from 'native-base';
+import PropTypes from 'prop-types';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import HeaderView from '../../components/header/header';
 import constantsText from '../../constants/constantsText';
@@ -12,8 +13,10 @@ class Collections extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      collectionList: [{ collection_name: 'Swarovki Crystals', no_of_products: '19 Products' },
-        { collection_name: 'Tools & Accessories', no_of_products: '16 Products' }],
+      collectionList: [{ product_name: 'Swarovki Crystals', no_of_products: '19 Products' },
+        { product_name: 'Tools & Accessories', no_of_products: '16 Products' }],
+      all_products: [{ product_name: 'Super Glue for flip flop', no_of_products: '100 in stock' },
+        { product_name: 'Swarovki Crystals 001', no_of_products: '150 inStock', variants: '150 in variants' }],
     };
   }
   render() {
@@ -21,7 +24,7 @@ class Collections extends Component {
       <Container
         style={CommonStyles.background}
       >
-        <HeaderView title={constantsText.collections} />
+        <HeaderView title={this.props.data} />
         <Content>
           <View
             style={CommonStyles.searchView}
@@ -41,12 +44,18 @@ class Collections extends Component {
               size={20}
             />
           </View>
-          <CollectioList collectionList={this.state.collectionList} />
+          <CollectioList collectionList={this.props.data === 'All Products' ?
+            this.state.all_products : this.state.collectionList}
+          />
         </Content>
         <FooterView />
       </Container>
     );
   }
 }
+
+Collections.propTypes = {
+  data: PropTypes.string.isRequired,
+};
 
 export default Collections;

@@ -19,21 +19,21 @@ const ProductsList = props => (
           />
           <Text style={[BasicStyles.textStyle, BasicStyles.fontStyle]}>{listItem.item}</Text>
         </View>
-        <TouchableOpacity onPress={Actions.collections}>
+        <TouchableOpacity onPress={() => Actions.collections(listItem.item)}>
           <Icon
             name="angle-right"
             style={CommonStyles.rightIcon}
             size={30}
           />
         </TouchableOpacity>
-
       </View>
     )}
+    keyExtractor={(item, index) => index}
   />
 );
 
 ProductsList.propTypes = {
-  productList: PropTypes.string.isRequired,
+  productList: PropTypes.instanceOf(Array).isRequired,
 };
 
 export default ProductsList;

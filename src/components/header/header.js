@@ -33,7 +33,7 @@ const HeaderView = props => (
       style={BasicStyles.title}
     >
       <Text
-        style={BasicStyles.HeadingText}
+        style={[BasicStyles.HeadingText, BasicStyles.title]}
       >
         {props.title}
       </Text>

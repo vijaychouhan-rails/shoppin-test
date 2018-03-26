@@ -95,6 +95,33 @@ const CommonStyles = StyleSheet.create({
   flexStyle: {
     width: standardFormat.searchWidth,
   },
+  centerContent: {
+    alignItems: 'center',
+  },
+  imageStyle: {
+    height: 100,
+    width: 100,
+    backgroundColor: colors.lightGrey,
+  },
+  fontBold: {
+    fontWeight: font.fontBold,
+  },
+  marginTop: {
+    marginTop: 7,
+  },
+  fontColor: {
+    color: colors.greyColor,
+  },
+  marginLeft: {
+    marginLeft: 30,
+  },
+  justifyContent: {
+    justifyContent: 'center',
+  },
+  standardFont: {
+    fontSize: font.searchFont,
+    color: colors.black,
+  },
 });
 
 export default CommonStyles;

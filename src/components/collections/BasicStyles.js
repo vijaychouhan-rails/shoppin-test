@@ -9,7 +9,7 @@ const BasicStyles = StyleSheet.create({
     flexDirection: 'row',
     width: standardFormat.searchWidth,
   },
-  fontStyle: {
+  marginTop: {
     marginTop: 7,
   },
   textStyle: {

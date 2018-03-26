@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { View, TextInput, FlatList, Text } from 'react-native';
+import { View, TextInput, FlatList, Text, TouchableOpacity } from 'react-native';
 import { Container, Content } from 'native-base';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Actions } from 'react-native-router-flux';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import HeaderView from '../../components/header/header';
 import constantsText from '../../constants/constantsText';
@@ -30,11 +31,14 @@ class Orders extends Component {
                   {listItem.item.hash}
                 </Text>
               </View>
-              <Icon
-                name="angle-right"
-                style={CommonStyles.rightIcon}
-                size={30}
-              />
+              <TouchableOpacity onPress={() => Actions.order_details(listItem.item)}>
+                <Icon
+                  name="angle-right"
+                  style={CommonStyles.rightIcon}
+                  size={30}
+                />
+              </TouchableOpacity>
+
 
             </View>
             <View style={[
@@ -50,13 +54,13 @@ class Orders extends Component {
                 {listItem.item.rs}
               </Text>
             </View>
-            <View style={[BasicStyles.directionRow, BasicStyles.marginTop,
+            <View style={[CommonStyles.directionRow, BasicStyles.marginTop,
               BasicStyles.marginBottom]}
             >
-              <Text style={BasicStyles.fontColor}>
+              <Text style={CommonStyles.fontColor}>
                 {listItem.item.payment}
               </Text>
-              <Text style={[BasicStyles.fontColor, BasicStyles.marginLeft]}>
+              <Text style={[CommonStyles.fontColor, CommonStyles.marginLeft]}>
                 {listItem.item.fulfiled}
               </Text>
             </View>
@@ -99,7 +103,7 @@ class Orders extends Component {
   }
 }
 Orders.propTypes = {
-  orders: PropTypes.string.isRequired,
+  orders: PropTypes.instanceOf(Array).isRequired,
 };
 
 const mapStateToProps = state => ({

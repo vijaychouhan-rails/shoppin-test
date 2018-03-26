@@ -11,12 +11,6 @@ const BasicStyles = StyleSheet.create({
     fontSize: 14,
     fontWeight: font.fontBold,
   },
-  fontColor: {
-    color: colors.greyColor,
-  },
-  marginLeft: {
-    marginLeft: 30,
-  },
   marginTop: {
     marginTop: 5,
   },

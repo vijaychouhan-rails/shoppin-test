@@ -15,6 +15,15 @@ const constantsText = {
   search: 'Search',
   totalSale: 'Total Sales',
   collections: 'Collections',
+  order_details: 'Order Details',
+  order: 'Order #',
+  orderDate: 'Order Date',
+  customer: 'Customer',
+  shippingAddressText: 'Shipping Address',
+  shippingAddress: '5051 prear Road Vamcovver BC V4Z 1J6 Canada',
+  billingAddressText: 'Billing Address',
+  contact: 'Contact',
+  emailID: 'johnedoe@emample.com',
 };
 
 export default constantsText;

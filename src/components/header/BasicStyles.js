@@ -8,7 +8,7 @@ const BasicStyles = StyleSheet.create({
     flex: 1,
   },
   title: {
-    alignItems: 'center',
+    justifyContent: 'center',
   },
   HeadingText: {
     fontSize: font.subHeading,
