@@ -7,6 +7,8 @@ import ForgotPassword from './containers/forgotPassword/ForgotPassword';
 import Dashboard from './containers/dashboard/Dashboard';
 import Orders from './containers/orders/Orders';
 import Products from './containers/products/Products';
+import Collections from './containers/collections/Collections';
+import ViewCollections from './containers/ViewCollections/ViewCollections';
 
 const RouterWithRedux = connect()(Router);
 
@@ -34,6 +36,14 @@ const Navigator = () => (
         <Scene
           key="products"
           component={Products}
+        />
+        <Scene
+          key="collections"
+          component={Collections}
+        />
+        <Scene
+          key="viewCollections"
+          component={ViewCollections}
         />
       </Scene>
     </RouterWithRedux>

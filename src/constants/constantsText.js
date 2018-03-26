@@ -14,6 +14,7 @@ const constantsText = {
   settings: 'Settings',
   search: 'Search',
   totalSale: 'Total Sales',
+  collections: 'Collections',
 };
 
 export default constantsText;

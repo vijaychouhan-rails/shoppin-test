@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import BasicStyles from './BasicStyles';
+import { Actions } from 'react-native-router-flux';
 import PropTypes from 'prop-types';
+import BasicStyles from './BasicStyles';
 import CommonStyles from '../../assets/CommonStyles';
 
 const ProductsList = props => (
@@ -18,14 +19,21 @@ const ProductsList = props => (
           />
           <Text style={[BasicStyles.textStyle, BasicStyles.fontStyle]}>{listItem.item}</Text>
         </View>
-        <Icon
-          name="angle-right"
-          style={CommonStyles.rightIcon}
-          size={30}
-        />
+        <TouchableOpacity onPress={Actions.collections}>
+          <Icon
+            name="angle-right"
+            style={CommonStyles.rightIcon}
+            size={30}
+          />
+        </TouchableOpacity>
+
       </View>
     )}
   />
 );
+
+ProductsList.propTypes = {
+  productList: PropTypes.string.isRequired,
+};
 
 export default ProductsList;

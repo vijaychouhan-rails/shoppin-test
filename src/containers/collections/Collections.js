@@ -6,22 +6,22 @@ import HeaderView from '../../components/header/header';
 import constantsText from '../../constants/constantsText';
 import FooterView from '../../components/footer/footer';
 import CommonStyles from '../../assets/CommonStyles';
-import ProductsList from '../../components/products/products-list';
+import CollectioList from '../../components/collections/collections-list';
 
-class Products extends Component {
+class Collections extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      productList: ['All Products', 'Collections'],
+      collectionList: [{ collection_name: 'Swarovki Crystals', no_of_products: '19 Products' },
+        { collection_name: 'Tools & Accessories', no_of_products: '16 Products' }],
     };
   }
-
   render() {
     return (
       <Container
         style={CommonStyles.background}
       >
-        <HeaderView title={constantsText.products} />
+        <HeaderView title={constantsText.collections} />
         <Content>
           <View
             style={CommonStyles.searchView}
@@ -41,7 +41,7 @@ class Products extends Component {
               size={20}
             />
           </View>
-          <ProductsList productList={this.state.productList} />
+          <CollectioList collectionList={this.state.collectionList} />
         </Content>
         <FooterView />
       </Container>
@@ -49,4 +49,4 @@ class Products extends Component {
   }
 }
 
-export default Products;
+export default Collections;

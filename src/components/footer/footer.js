@@ -42,7 +42,7 @@ const FooterView = () => (
           {constantsText.products}
         </Text>
       </Button>
-      <Button vertical>
+      <Button vertical onPress={Actions.collections}>
         <Icon name="triangle" size={20} style={BasicStyles.icon} />
         <Text
           style={BasicStyles.footerText}

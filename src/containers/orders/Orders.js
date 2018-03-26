@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, TextInput, FlatList, Text, TouchableOpacity } from 'react-native';
+import { View, TextInput, FlatList, Text } from 'react-native';
 import { Container, Content } from 'native-base';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
