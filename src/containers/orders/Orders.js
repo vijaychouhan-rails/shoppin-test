@@ -23,11 +23,11 @@ class Orders extends Component {
       <FlatList
         data={orders}
         renderItem={listItem => (
-          <View style={[BasicStyles.listView, BasicStyles.marginTop]}>
+          <View style={[CommonStyles.listView, BasicStyles.marginTop]}>
             <View style={[CommonStyles.directionRow, CommonStyles.spaceBetween]}>
               <View>
                 <Text style={BasicStyles.textStyle}>{listItem.item.date}</Text>
-                <Text style={[BasicStyles.textStyle, BasicStyles.subMarginTop]}>
+                <Text style={[BasicStyles.textStyle, CommonStyles.subMarginTop]}>
                   {listItem.item.hash}
                 </Text>
               </View>
@@ -42,20 +42,20 @@ class Orders extends Component {
 
             </View>
             <View style={[
-              BasicStyles.listView,
-              BasicStyles.directionRow,
+              CommonStyles.listView,
+              CommonStyles.directionRow,
               BasicStyles.marginTop,
               CommonStyles.spaceBetween]}
             >
-              <Text style={BasicStyles.nameStyle}>
+              <Text style={CommonStyles.nameStyle}>
                 {listItem.item.name}
               </Text>
-              <Text style={BasicStyles.nameStyle}>
+              <Text style={CommonStyles.nameStyle}>
                 {listItem.item.rs}
               </Text>
             </View>
             <View style={[CommonStyles.directionRow, BasicStyles.marginTop,
-              BasicStyles.marginBottom]}
+              CommonStyles.marginBottom]}
             >
               <Text style={CommonStyles.fontColor}>
                 {listItem.item.payment}

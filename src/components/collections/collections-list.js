@@ -18,12 +18,16 @@ const CollectionList = props => (
             style={CommonStyles.imageStyle}
           />
           <View>
-            <Text style={[BasicStyles.textStyle, BasicStyles.fontStyle]}>
+            <Text style={[BasicStyles.textStyle, CommonStyles.fontStyle]}>
               {listItem.item.product_name}
             </Text>
             <View style={[CommonStyles.directionRow, BasicStyles.marginTop]}>
-              <Text style={BasicStyles.margin}>{listItem.item.no_of_products}</Text>
-              <Text style={BasicStyles.margin}>{listItem.item.variants}</Text>
+              <Text style={[BasicStyles.margin, CommonStyles.fontColor]}>
+                {listItem.item.no_of_products}
+              </Text>
+              <Text style={[BasicStyles.margin, CommonStyles.fontColor]}>
+                {listItem.item.variants}
+              </Text>
             </View>
           </View>
 

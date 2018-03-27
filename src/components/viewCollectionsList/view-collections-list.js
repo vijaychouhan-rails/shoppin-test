@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text, FlatList, Image } from 'react-native';
+import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { Actions } from 'react-native-router-flux';
 import PropTypes from 'prop-types';
 import BasicStyles from './BasicStyles';
 import CommonStyles from '../../assets/CommonStyles';
@@ -17,21 +18,30 @@ const ViewCollectionsList = props => (
             style={CommonStyles.imageStyle}
           />
           <View style={BasicStyles.marginTop}>
-            <Text style={[BasicStyles.textStyle, BasicStyles.fontStyle]}>
+            <Text style={[BasicStyles.textStyle, CommonStyles.fontStyle]}>
               {listItem.item.view_collection_name}
             </Text>
             <View style={CommonStyles.directionRow}>
-              <Text style={BasicStyles.margin}>{listItem.item.no_of_products}</Text>
-              <Text style={BasicStyles.margin}>{listItem.item.no_of_variants}</Text>
+              <Text style={[BasicStyles.margin, CommonStyles.fontColor]}>
+                {listItem.item.no_of_products}
+              </Text>
+              <Text style={[BasicStyles.margin, CommonStyles.fontColor]}>
+                {listItem.item.no_of_variants}
+              </Text>
             </View>
           </View>
 
         </View>
-        <Icon
-          name="angle-right"
-          style={CommonStyles.rightIcon}
-          size={30}
-        />
+        <TouchableOpacity
+          onPress={() => Actions.product_details(listItem.item.view_collection_name)}
+        >
+          <Icon
+            name="angle-right"
+            style={CommonStyles.rightIcon}
+            size={30}
+          />
+        </TouchableOpacity>
+
       </View>
     )}
     keyExtractor={(item, index) => index}

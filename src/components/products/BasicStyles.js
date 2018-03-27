@@ -9,9 +9,6 @@ const BasicStyles = StyleSheet.create({
     flexDirection: 'row',
     width: standardFormat.searchWidth,
   },
-  fontStyle: {
-    marginTop: 7,
-  },
   textStyle: {
     marginLeft: 10,
     fontSize: font.searchFont,
@@ -19,6 +16,9 @@ const BasicStyles = StyleSheet.create({
   },
   icon: {
     color: colors.bluecolor,
+  },
+  marginTop: {
+    marginTop: 10,
   },
 });
 

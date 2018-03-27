@@ -58,7 +58,7 @@ const CommonStyles = StyleSheet.create({
   search: {
     flex: 1,
     fontSize: font.searchFont,
-    color: colors.black
+    color: colors.black,
   },
   searchView: {
     width: standardFormat.searchWidth,
@@ -110,6 +110,7 @@ const CommonStyles = StyleSheet.create({
     marginTop: 7,
   },
   fontColor: {
+    fontSize: font.fontSize,
     color: colors.greyColor,
   },
   marginLeft: {
@@ -121,6 +122,28 @@ const CommonStyles = StyleSheet.create({
   standardFont: {
     fontSize: font.searchFont,
     color: colors.black,
+  },
+  backgroundColor: {
+    backgroundColor: colors.white,
+  },
+  border_style: {
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    borderColor: colors.lightGrey,
+  },
+  listView: {
+    width: standardFormat.searchWidth,
+  },
+  subMarginTop: {
+    marginTop: 3,
+  },
+  nameStyle: {
+    fontSize: font.subHeading,
+    fontWeight: font.fontBold,
+    color: colors.black,
+  },
+  marginBottom: {
+    marginBottom: 10,
   },
 });
 

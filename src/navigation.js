@@ -10,6 +10,8 @@ import Products from './containers/products/Products';
 import Collections from './containers/collections/Collections';
 import ViewCollections from './containers/ViewCollections/ViewCollections';
 import OrderDetails from './containers/orderDetails/OrderDetails';
+import CustomerInfo from './containers/customerOrderDetails/CustomerInfo';
+import ProductDetails from './containers/product_details/ProductDetails';
 
 const RouterWithRedux = connect()(Router);
 
@@ -49,6 +51,14 @@ const Navigator = () => (
         <Scene
           key="order_details"
           component={OrderDetails}
+        />
+        <Scene
+          key="customer_details"
+          component={CustomerInfo}
+        />
+        <Scene
+          key="product_details"
+          component={ProductDetails}
         />
       </Scene>
     </RouterWithRedux>

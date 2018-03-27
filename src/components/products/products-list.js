@@ -17,7 +17,9 @@ const ProductsList = props => (
             style={BasicStyles.icon}
             size={40}
           />
-          <Text style={[BasicStyles.textStyle, BasicStyles.fontStyle]}>{listItem.item}</Text>
+          <Text style={[BasicStyles.textStyle, CommonStyles.fontStyle, BasicStyles.marginTop]}>
+            {listItem.item}
+          </Text>
         </View>
         <TouchableOpacity onPress={() => Actions.collections(listItem.item)}>
           <Icon
