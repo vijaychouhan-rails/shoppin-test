@@ -1,12 +1,22 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet } from 'react-native';
 import standardFormat from '../../constants/standardFormat';
 
-const { width } = Dimensions.get('window');
-
 const BasicStyles = StyleSheet.create({
-  forgotPassword: {
-    marginTop: standardFormat.marginVertical,
-    width: width / 1.2,
+  marginTop: {
+    marginTop: standardFormat.inputMarginTop,
+  },
+  buttomMarginTop: {
+    marginTop: standardFormat.buttomMarginTop,
+  },
+  titleMargin: {
+    marginTop: standardFormat.top_margin,
+    marginBottom: 5,
+  },
+  marginBoth: {
+    marginVertical: standardFormat.topSpace,
+  },
+  topMargin: {
+    marginTop: standardFormat.forgot_password_margin,
   },
 });
 

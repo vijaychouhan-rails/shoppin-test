@@ -8,7 +8,7 @@ const BasicStyles = StyleSheet.create({
     width: 70,
     borderRadius: 35,
     overflow: 'hidden',
-    backgroundColor: colors.lightGrey,
+    backgroundColor: colors.greyColor,
   },
   marginLeft: {
     marginLeft: 10,
@@ -24,16 +24,28 @@ const BasicStyles = StyleSheet.create({
   },
   view_border_style: {
     borderTopWidth: 0.5,
-    borderColor: colors.lightGrey,
+    borderColor: colors.greyColor,
   },
   circleIcon: {
-    width: 30,
-    height: 30,
+    width: 40,
+    height: 40,
     borderWidth: 1,
-    borderRadius: 15,
-    borderColor: colors.lightGrey,
+    borderRadius: 20,
+    borderColor: colors.greyColor,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  padding: {
+    paddingVertical: 7,
+  },
+  paddingRight: {
+    paddingRight: 10,
+  },
+  flex: {
+    flex: 1,
+  },
+  alignRight: {
+    justifyContent: 'flex-end',
   },
 });
 

@@ -45,6 +45,13 @@ const constantsText = {
   address2: 'address 2',
   address3: 'City State Zipcode\nCountry',
   title_of_list: 'The Xirius Swarovski Crystal 2088',
+  no_of_orders: '3 Orders',
+  date: '2 Mar',
+  lastOrder: 'Last Order',
+  app_setings: 'App Settings',
+  pushNotifications: 'Push Notifications',
+  badgeAppIcon: 'Badge App Icon',
+  logOut: 'Log out',
+  product_price: 'US$0.00',
 };
-
 export default constantsText;

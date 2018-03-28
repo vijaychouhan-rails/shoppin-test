@@ -2,22 +2,20 @@ import React, { Component } from 'react';
 import { View, TextInput } from 'react-native';
 import { Container, Content } from 'native-base';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import HeaderView from '../../components/header/header';
 import constantsText from '../../constants/constantsText';
 import FooterView from '../../components/footer/footer';
 import CommonStyles from '../../assets/CommonStyles';
 import CollectioList from '../../components/collections/collections-list';
+import colors from '../../constants/colors';
+
 
 class Collections extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      collectionList: [{ product_name: 'Swarovki Crystals', no_of_products: '19 Products' },
-        { product_name: 'Tools & Accessories', no_of_products: '16 Products' }],
-      all_products: [{ product_name: 'Super Glue for flip flop', no_of_products: '100 in stock' },
-        { product_name: 'Swarovki Crystals 001', no_of_products: '150 inStock', variants: '150 in variants' }],
-    };
+    this.state = {};
   }
   render() {
     return (
@@ -32,11 +30,12 @@ class Collections extends Component {
             <Icon
               name="search"
               style={CommonStyles.searchIcon}
-              size={20}
+              size={16}
             />
             <TextInput
               style={CommonStyles.search}
               placeholder={constantsText.search}
+              placeholderTextColor={colors.gray}
             />
             <Icon
               name="microphone"
@@ -45,7 +44,7 @@ class Collections extends Component {
             />
           </View>
           <CollectioList collectionList={this.props.data === 'All Products' ?
-            this.state.all_products : this.state.collectionList}
+            this.props.all_products : this.props.collectionList}
           />
         </Content>
         <FooterView />
@@ -56,6 +55,14 @@ class Collections extends Component {
 
 Collections.propTypes = {
   data: PropTypes.string.isRequired,
+  collectionList: PropTypes.instanceOf(Array).isRequired,
+  all_products: PropTypes.instanceOf(Array).isRequired,
 };
 
-export default Collections;
+
+const mapStateToProps = state => ({
+  collectionList: state.get('collectionList').toJS(),
+  all_products: state.get('all_products').toJS(),
+
+});
+export default connect(mapStateToProps)(Collections);

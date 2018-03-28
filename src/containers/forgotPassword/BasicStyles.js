@@ -8,7 +8,11 @@ const BasicStyles = StyleSheet.create({
   },
   inputText: {
     marginLeft: standardFormat.marginLeft,
-    marginTop: standardFormat.marginVertical,
+    marginTop: standardFormat.topMargin,
+  },
+  marginTop: {
+    marginTop: standardFormat.marginTop,
+    marginHorizontal: standardFormat.marginLeft,
   },
 });
 

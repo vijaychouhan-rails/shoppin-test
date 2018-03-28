@@ -10,8 +10,10 @@ const ViewCollectionsList = props => (
   <FlatList
     data={props.view_collection_list}
     renderItem={listItem => (
-      <View style={[CommonStyles.directionRow, CommonStyles.spaceBetween,
-        BasicStyles.marginTop, CommonStyles.centerContent]}
+      <TouchableOpacity
+        style={[CommonStyles.directionRow, CommonStyles.spaceBetween,
+          BasicStyles.marginTop, CommonStyles.centerContent]}
+        onPress={() => Actions.product_details(listItem.item.view_collection_name)}
       >
         <View style={[CommonStyles.directionRow, CommonStyles.centerContent]}>
           <Image
@@ -42,9 +44,9 @@ const ViewCollectionsList = props => (
           />
         </TouchableOpacity>
 
-      </View>
+      </TouchableOpacity>
     )}
-    keyExtractor={(item, index) => index}
+    keyExtractor={(item, index) => index.toString()}
   />
 );
 

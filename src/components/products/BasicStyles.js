@@ -17,8 +17,17 @@ const BasicStyles = StyleSheet.create({
   icon: {
     color: colors.bluecolor,
   },
+  text_top_margin: {
+    marginTop: standardFormat.setting_top_margin,
+  },
   marginTop: {
-    marginTop: 10,
+    marginTop: standardFormat.list_margin,
+  },
+  arrow_top_margin: {
+    marginTop: standardFormat.arrow_top_margin,
+  },
+  margin: {
+    margin: standardFormat.listMargin,
   },
 });
 

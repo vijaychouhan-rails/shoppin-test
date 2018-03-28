@@ -29,11 +29,9 @@ const HeaderView = props => (
         />
       </TouchableOpacity>
     </Left>
-    <Body
-      style={BasicStyles.title}
-    >
+    <Body>
       <Text
-        style={[BasicStyles.HeadingText, BasicStyles.title]}
+        style={[BasicStyles.HeadingText, BasicStyles.title, CommonStyles.fontBold]}
       >
         {props.title}
       </Text>

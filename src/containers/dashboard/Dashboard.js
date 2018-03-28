@@ -27,6 +27,7 @@ class DashBoard extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      id: 1,
       index: 0,
       routes: [
         { key: 'first', title: 'Today' },
@@ -57,10 +58,7 @@ class DashBoard extends Component {
   render() {
     return (
       <Container
-        style={{
-          justifyContent: 'center',
-          backgroundColor: '#fff'
-        }}
+        style={BasicStyles.container}
       >
         <HeaderView title={constantsText.Dashboard} />
         <TabViewAnimated
@@ -71,7 +69,7 @@ class DashBoard extends Component {
           onIndexChange={this.handleIndexChange}
           initialLayout={initialLayout}
         />
-      <FooterView />
+      <FooterView dashboard={this.state.id}/>
       </Container>
     );
   }

@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import font from '../../constants/font';
 import colors from '../../constants/colors';
-// import standardFormat from '../../constants/standardFormat';
+import standardFormat from '../../constants/standardFormat';
 
 const BasicStyles = StyleSheet.create({
   marginTop: {
@@ -17,30 +17,24 @@ const BasicStyles = StyleSheet.create({
   paddingBoth: {
     paddingVertical: 10,
   },
-  activeDotColor: {
-    color: colors.black,
-  },
-  imageSlider: {
-    flex: 1,
-    alignItems: 'center',
-  },
   wrapper: {
-    height: 200,
-    width: 200,
+    marginTop: 10,
+    height: standardFormat.productImageView,
+    width: standardFormat.searchWidth,
   },
   slide: {
-    height: 200,
+    height: standardFormat.productImage,
     justifyContent: 'center',
     alignItems: 'center',
   },
   backgroundColor1: {
-    backgroundColor: '#9DD6EB',
+    backgroundColor: colors.screen1,
   },
   backgroundColor2: {
-    backgroundColor: '#97CAE5',
+    backgroundColor: colors.screen1,
   },
   backgroundColor3: {
-    backgroundColor: '#92BBD9',
+    backgroundColor: colors.screen3,
   },
   text: {
     color: '#fff',

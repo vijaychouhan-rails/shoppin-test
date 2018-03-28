@@ -3,11 +3,17 @@ import { View, Text, ScrollView, Image, FlatList, TouchableOpacity } from 'react
 import { Container } from 'native-base';
 import { connect } from 'react-redux';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Swiper from 'react-native-swiper';
 import PropTypes from 'prop-types';
 import constantsText from '../../constants/constantsText';
 import HeaderView from '../../components/header/header';
+import CalenderDateFirst from '../../components/customerInfo/calender-date-first';
+import CalenderDateSecond from '../../components/customerInfo/calender-date-second';
+import CalenderDateThird from '../../components/customerInfo/calender-date-third';
 import CommonStyles from '../../assets/CommonStyles';
 import BasicStyles from './BasicStyles';
+import colors from '../../constants/colors';
+
 
 class CustomerInfo extends Component {
   constructor(props) {
@@ -22,7 +28,7 @@ class CustomerInfo extends Component {
       <FlatList
         data={orders}
         renderItem={listItem => (
-          <View style={[CommonStyles.listView, BasicStyles.marginTop]}>
+          <TouchableOpacity style={[CommonStyles.listView, BasicStyles.marginTop, CommonStyles.border]}>
             <View style={[CommonStyles.directionRow, CommonStyles.spaceBetween]}>
               <View>
                 <Text style={BasicStyles.textStyle}>{listItem.item.date}</Text>
@@ -54,52 +60,77 @@ class CustomerInfo extends Component {
             <View style={[CommonStyles.directionRow, BasicStyles.marginTop,
               CommonStyles.marginBottom]}
             >
-              <Text style={CommonStyles.fontColor}>
+              <Text style={[CommonStyles.fontColor, CommonStyles.marginTop]}>
                 {listItem.item.payment}
               </Text>
-              <Text style={[CommonStyles.fontColor, CommonStyles.marginLeft]}>
+              <Text style={[CommonStyles.fontColor, CommonStyles.marginLeft,
+                CommonStyles.marginTop]}
+              >
                 {listItem.item.fulfiled}
               </Text>
             </View>
-          </View>
+          </TouchableOpacity>
         )}
+        keyExtractor={(item, index) => index.toString()}
       />
     );
   }
 
   render() {
     return (
-      <Container style={CommonStyles.backgroundColor}>
+      <Container style={CommonStyles.background}>
         <HeaderView title={this.props.data} />
         <ScrollView style={[CommonStyles.marginTop, CommonStyles.marginBottom]}>
-
-          <View style={[CommonStyles.directionRow, BasicStyles.marginTop, CommonStyles.border_style,
+          <View style={[CommonStyles.directionRow, BasicStyles.marginTop, BasicStyles.border_style,
             CommonStyles.marginBottom, CommonStyles.spaceBetween, CommonStyles.centerContent]}
           >
-            <View>
-              <Text style={[CommonStyles.standardFont, CommonStyles.fontBold]}>
+            <View style={BasicStyles.marginBottom}>
+              <Text style={[CommonStyles.standardFont, CommonStyles.fontBold,
+                BasicStyles.marginBottom]}
+              >
                 {this.props.data}
               </Text>
-              <Image
-                style={BasicStyles.customer_image}
-              />
-              <View style={[BasicStyles.marginLeft, CommonStyles.justifyContent]}>
-                <Text style={[CommonStyles.fontColor, CommonStyles.marginTop]}>
-                  {constantsText.address}
-                </Text>
-                <Text style={CommonStyles.fontColor}>
-                  {constantsText.month}
-                </Text>
+              <View style={CommonStyles.directionRow}>
+                <Image
+                  style={BasicStyles.customer_image}
+                />
+                <View style={[BasicStyles.marginLeft, CommonStyles.justifyContent]}>
+                  <Text style={CommonStyles.fontColor}>
+                    {constantsText.address}
+                  </Text>
+                  <Text style={[CommonStyles.fontColor, CommonStyles.marginTop]}>
+                    {constantsText.month}
+                  </Text>
+                </View>
               </View>
             </View>
           </View>
-          <Text style={[CommonStyles.standardFont, BasicStyles.marginTop, CommonStyles.fontBold]}>
+          <Text style={[CommonStyles.standardFont, BasicStyles.marginTop, CommonStyles.fontBold,
+            BasicStyles.marginBottom]}
+          >
             {constantsText.note}
           </Text>
           <Text style={[CommonStyles.fontStyle, BasicStyles.marginTop]}>
             {constantsText.note_content}
           </Text>
-          <Text style={[CommonStyles.standardFont, BasicStyles.marginTop, CommonStyles.fontBold]}>
+          <View style={BasicStyles.sliderView}>
+            <View style={CommonStyles.imageSlider}>
+              <Swiper
+                style={BasicStyles.wrapper}
+                showsButtons={false}
+                activeDotColor={colors.black}
+                showsPagination
+                scrollEnabled
+              >
+                <CalenderDateFirst />
+                <CalenderDateSecond />
+                <CalenderDateThird />
+              </Swiper>
+            </View>
+          </View>
+          <Text style={[CommonStyles.standardFont, BasicStyles.marginTop, CommonStyles.fontBold,
+            BasicStyles.marginBottom]}
+          >
             {constantsText.recenOrders}
           </Text>
           {this.showList()}
@@ -109,19 +140,19 @@ class CustomerInfo extends Component {
           <Text style={[CommonStyles.fontColor, CommonStyles.marginTop]}>
             {constantsText.email}
           </Text>
-          <Text style={CommonStyles.fontStyle}>
+          <Text style={[CommonStyles.fontStyle, CommonStyles.fontBold]}>
             {constantsText.emailID}
           </Text>
           <Text style={[CommonStyles.fontColor, BasicStyles.extraMarginTop]}>
-            {constantsText.email}
+            {constantsText.address}
           </Text>
-          <Text style={CommonStyles.fontStyle}>
+          <Text style={[CommonStyles.fontStyle, CommonStyles.fontBold]}>
             {constantsText.address1}
           </Text>
-          <Text style={CommonStyles.fontStyle}>
+          <Text style={[CommonStyles.fontStyle, CommonStyles.fontBold]}>
             {constantsText.address2}
           </Text>
-          <Text style={CommonStyles.fontStyle}>
+          <Text style={[CommonStyles.fontStyle, CommonStyles.fontBold]}>
             {constantsText.address3}
           </Text>
         </ScrollView>

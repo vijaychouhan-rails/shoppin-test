@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native';
 import colors from '../../constants/colors';
-// import standardFormat from '../../constants/standardFormat';
 
 const BasicStyles = StyleSheet.create({
   tabView: {
@@ -9,7 +8,7 @@ const BasicStyles = StyleSheet.create({
     backgroundColor: colors.white,
   },
   tab: {
-    height: 40,
+    height: 35,
     borderRadius: 5,
     borderWidth: 2,
     backgroundColor: colors.white,
@@ -26,7 +25,11 @@ const BasicStyles = StyleSheet.create({
   },
   indicator: {
     backgroundColor: colors.bluecolor,
-  }
+  },
+  container: {
+    justifyContent: 'center',
+    backgroundColor: colors.white,
+  },
 });
 
 export default BasicStyles;

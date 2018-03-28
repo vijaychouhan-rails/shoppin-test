@@ -1,20 +1,16 @@
 import { StyleSheet } from 'react-native';
-import font from '../../constants/font';
 import colors from '../../constants/colors';
-
+import font from '../../constants/font';
 
 const BasicStyles = StyleSheet.create({
-  flexStyle: {
-    flex: 1,
+  marginTop: {
+    marginTop: 30,
   },
-  title: {
-    textAlign: 'center',
+  marginHorizontal: {
+    marginHorizontal: 10,
   },
-  HeadingText: {
-    fontSize: font.subHeading,
-    color: colors.black,
-  },
-  iconStyle: {
+  listedText: {
+    fontSize: font.searchFont,
     color: colors.black,
   },
 });

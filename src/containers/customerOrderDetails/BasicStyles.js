@@ -20,8 +20,22 @@ const BasicStyles = StyleSheet.create({
   marginTop: {
     marginTop: 5,
   },
+  marginBottom: {
+    marginBottom: 10,
+  },
   extraMarginTop: {
     marginTop: 15,
+  },
+  wrapper: {
+    height: 200,
+    width: 200,
+  },
+  border_style: {
+    borderBottomWidth: 1,
+    borderColor: colors.lightGrey,
+  },
+  sliderView: {
+    height: 200,
   },
 });
 

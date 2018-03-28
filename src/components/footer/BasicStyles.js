@@ -11,7 +11,13 @@ const BasicStyles = StyleSheet.create({
     backgroundColor: colors.white,
   },
   icon: {
-    color: colors.greyColor,
+    color: colors.darkGray,
+  },
+  marginTop: {
+    marginTop: 5,
+  },
+  iconBlue: {
+    color: colors.bluecolor,
   },
 });
 

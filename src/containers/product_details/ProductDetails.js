@@ -3,6 +3,7 @@ import { View, FlatList, Image, Text } from 'react-native';
 import { Container, Content } from 'native-base';
 import Swiper from 'react-native-swiper';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import HeaderView from '../../components/header/header';
 import constantsText from '../../constants/constantsText';
 import FooterView from '../../components/footer/footer';
@@ -12,19 +13,14 @@ import CommonStyles from '../../assets/CommonStyles';
 class ProductDetails extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      productList: [
-        { size: 'Small / SS5', rs: 'US$3.14', product_code: 'SWR-258-SS5-S' },
-        { size: 'Small / SS7', rs: 'US$3.14', product_code: 'SWR-258-SS5-S' },
-      ],
-    };
+    this.state = {};
     this.showList = this.showList.bind(this);
   }
 
   showList() {
     return (
       <FlatList
-        data={this.state.productList}
+        data={this.props.productListDetails}
         renderItem={listItem => (
           <View style={[CommonStyles.directionRow, CommonStyles.spaceBetween,
             BasicStyles.marginTop, CommonStyles.centerContent]}
@@ -50,7 +46,7 @@ class ProductDetails extends Component {
             </View>
           </View>
         )}
-        keyExtractor={(item, index) => index}
+        keyExtractor={(item, index) => index.toString()}
       />
     );
   }
@@ -63,11 +59,11 @@ class ProductDetails extends Component {
       >
         <HeaderView title={this.props.data} />
         <Content>
-          <View style={BasicStyles.imageSlider}>
+          <View style={CommonStyles.imageSlider}>
             <Swiper
               style={BasicStyles.wrapper}
               showsButtons={false}
-              activeDotColor={BasicStyles.activeDotColor}
+              activeDotColor={CommonStyles.activeDotColor}
             >
               <Image style={[BasicStyles.slide, BasicStyles.backgroundColor1]} />
               <Image style={[BasicStyles.slide, BasicStyles.backgroundColor2]} />
@@ -90,9 +86,16 @@ class ProductDetails extends Component {
     );
   }
 }
+
+
+const mapStateToProps = state => ({
+  productListDetails: state.get('productListDetails').toJS(),
+});
+
 ProductDetails.propTypes = {
-  data: PropTypes.instanceOf(Object).isRequired,
+  data: PropTypes.string.isRequired,
+  productListDetails: PropTypes.instanceOf(Array).isRequired,
 };
 
 
-export default ProductDetails;
+export default connect(mapStateToProps)(ProductDetails);

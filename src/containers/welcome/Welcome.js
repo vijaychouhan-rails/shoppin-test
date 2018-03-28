@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { View, TouchableOpacity, TextInput, Text } from 'react-native';
+import { View, TouchableOpacity, TextInput, Text, ScrollView } from 'react-native';
 import { Button } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 import CommonStyles from '../../assets/CommonStyles';
 import constantsText from '../../constants/constantsText';
 import BasicStyles from './BasicStyles';
+import colors from '../../constants/colors';
+
 
 class Welcome extends Component {
   constructor(props) {
@@ -16,46 +18,54 @@ class Welcome extends Component {
       <View
         style={CommonStyles.background}
       >
-        <Text
-          style={CommonStyles.HeadingText}
-        >
-          {constantsText.shoppin}
-        </Text>
-        <TextInput
-          style={[CommonStyles.inputText, CommonStyles.marginBoth]}
-          underlineColorAndroid="transparent"
-          placeholder={constantsText.website}
-        />
-        <TextInput
-          style={[CommonStyles.inputText, CommonStyles.marginBoth]}
-          underlineColorAndroid="transparent"
-          placeholder={constantsText.email}
-        />
-        <TextInput
-          style={[CommonStyles.inputText, CommonStyles.marginBoth]}
-          underlineColorAndroid="transparent"
-          placeholder={constantsText.password}
-        />
-        <Button
-          full
-          dark
-          style={CommonStyles.buttonStyles}
-          onPress={Actions.dashboard}
-        >
-          <Text
-            style={[CommonStyles.textStyle, CommonStyles.textColorWhite]}
-          >{constantsText.login}
-          </Text>
-        </Button>
-        <TouchableOpacity
-          onPress={Actions.forgotPassword}
-        >
-          <Text
-            style={[BasicStyles.forgotPassword, CommonStyles.textColorSkyBlue]}
-          >
-            {constantsText.forgotPassword}
-          </Text>
-        </TouchableOpacity>
+        <ScrollView>
+          <View style={CommonStyles.background}>
+            <Text
+              style={[CommonStyles.HeadingText, BasicStyles.titleMargin]}
+            >
+              {constantsText.shoppin}
+            </Text>
+            <TextInput
+              style={[CommonStyles.inputText, CommonStyles.marginBoth]}
+              underlineColorAndroid="transparent"
+              placeholder={constantsText.website}
+              placeholderTextColor={colors.pureGray}
+            />
+            <TextInput
+              style={[CommonStyles.inputText, BasicStyles.marginBoth]}
+              underlineColorAndroid="transparent"
+              placeholder={constantsText.email}
+              placeholderTextColor={colors.pureGray}
+            />
+            <TextInput
+              style={[CommonStyles.inputText, BasicStyles.marginBoth]}
+              underlineColorAndroid="transparent"
+              placeholder={constantsText.password}
+              placeholderTextColor={colors.pureGray}
+            />
+            <Button
+              full
+              dark
+              style={BasicStyles.buttomMarginTop}
+              onPress={Actions.dashboard}
+            >
+              <Text
+                style={[CommonStyles.textStyle, CommonStyles.textColorWhite]}
+              >{constantsText.login}
+              </Text>
+            </Button>
+            <TouchableOpacity
+              onPress={Actions.forgotPassword}
+            >
+              <Text
+                style={[CommonStyles.forgotPassword, CommonStyles.textColorSkyBlue,
+                  BasicStyles.topMargin]}
+              >
+                {constantsText.forgotPassword}
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
       </View>
     );
   }

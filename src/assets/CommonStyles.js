@@ -19,11 +19,12 @@ const CommonStyles = StyleSheet.create({
   inputText: {
     color: colors.black,
     width: standardFormat.inputWidth,
-    fontSize: font.fontSize,
+    fontSize: font.searchFont,
+    fontWeight: font.fontBold,
     borderBottomWidth: 1,
-    borderColor: colors.greyColor,
+    borderColor: colors.pureGray,
     paddingLeft: 5,
-    paddingBottom: 5,
+    paddingBottom: 13,
   },
   marginBoth: {
     marginHorizontal: standardFormat.marginHorizontal,
@@ -36,6 +37,7 @@ const CommonStyles = StyleSheet.create({
   },
   textStyle: {
     color: colors.white,
+    fontSize: font.searchFont,
     fontWeight: font.fontBold,
     textAlign: 'center',
   },
@@ -45,6 +47,7 @@ const CommonStyles = StyleSheet.create({
   },
   textColorSkyBlue: {
     color: colors.skyBlue,
+    fontSize: font.searchFont,
   },
   textColorWhite: {
     color: colors.white,
@@ -59,6 +62,7 @@ const CommonStyles = StyleSheet.create({
     flex: 1,
     fontSize: font.searchFont,
     color: colors.black,
+    marginTop: 3,
   },
   searchView: {
     width: standardFormat.searchWidth,
@@ -69,11 +73,12 @@ const CommonStyles = StyleSheet.create({
     marginVertical: standardFormat.marginVertical,
   },
   searchIcon: {
-    color: colors.greyColor,
+    color: colors.pureGray,
+    marginTop: 3,
     marginRight: 5,
   },
   microphone: {
-    color: colors.greyColor,
+    color: colors.darkGray,
     justifyContent: 'flex-end',
   },
   fontStyle: {
@@ -101,6 +106,8 @@ const CommonStyles = StyleSheet.create({
   imageStyle: {
     height: 100,
     width: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: colors.lightGrey,
   },
   fontBold: {
@@ -109,9 +116,11 @@ const CommonStyles = StyleSheet.create({
   marginTop: {
     marginTop: 7,
   },
+  standardFontSize: {
+    fontSize: font.standardFontSize,
+  },
   fontColor: {
-    fontSize: font.fontSize,
-    color: colors.greyColor,
+    color: colors.gray,
   },
   marginLeft: {
     marginLeft: 30,
@@ -129,7 +138,7 @@ const CommonStyles = StyleSheet.create({
   border_style: {
     borderTopWidth: 1,
     borderBottomWidth: 1,
-    borderColor: colors.lightGrey,
+    borderColor: colors.greyColor,
   },
   listView: {
     width: standardFormat.searchWidth,
@@ -144,6 +153,26 @@ const CommonStyles = StyleSheet.create({
   },
   marginBottom: {
     marginBottom: 10,
+  },
+  RSText: {
+    fontSize: font.headingSize,
+    fontWeight: font.fontBold,
+    color: colors.black,
+  },
+  imageSlider: {
+    flex: 1,
+    alignItems: 'center',
+  },
+  paddingHorizontal: {
+    paddingLeft: 10,
+  },
+  forgotPassword: {
+    marginTop: standardFormat.marginVertical,
+    width: width / 1.2,
+  },
+  border: {
+    borderBottomWidth: 1,
+    borderColor: colors.imageGrayColor,
   },
 });
 

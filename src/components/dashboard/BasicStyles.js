@@ -6,16 +6,11 @@ import font from '../../constants/font';
 const BasicStyles = StyleSheet.create({
   orderImage: {
     marginTop: 10,
-    height: standardFormat.searchWidth,
-    width: standardFormat.searchWidth,
-    backgroundColor: colors.lightGrey,
+    height: standardFormat.orderImageWidth,
+    width: standardFormat.orderImageWidth,
+    backgroundColor: colors.imageGrayColor,
     borderWidth: 1,
-    borderColor: colors.greyColor
-  },
-  RSText: {
-    fontSize: font.headingSize,
-    fontWeight: font.fontBold,
-    color: colors.black,
+    borderColor: colors.darkGray,
   },
   margin: {
     marginTop: standardFormat.marginVertical,
@@ -23,7 +18,7 @@ const BasicStyles = StyleSheet.create({
   },
   fontStyle: {
     fontSize: font.searchFont,
-    color: colors.greyColor,
+    color: colors.darkGray,
   },
 });
 

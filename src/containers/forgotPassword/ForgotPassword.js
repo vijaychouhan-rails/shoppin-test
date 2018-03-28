@@ -4,6 +4,7 @@ import { Button, Container } from 'native-base';
 import CommonStyles from '../../assets/CommonStyles';
 import constantsText from '../../constants/constantsText';
 import HeaderView from '../../components/header/header';
+import colors from '../../constants/colors';
 import BasicStyles from './BasicStyles';
 
 class ForgotPassword extends Component {
@@ -18,8 +19,9 @@ class ForgotPassword extends Component {
         <TextInput
           style={[CommonStyles.inputText, BasicStyles.inputText]}
           placeholder={constantsText.email}
+          placeholderTextColor={colors.pureGray}
         />
-        <Button full dark style={CommonStyles.buttonStyles}>
+        <Button full dark style={BasicStyles.marginTop}>
           <Text style={[CommonStyles.textStyle, CommonStyles.textColorWhite]}>
             {constantsText.Change_Password}
           </Text>
