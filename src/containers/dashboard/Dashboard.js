@@ -48,9 +48,8 @@ class DashBoard extends Component {
   handleIndexChange = index => this.setState({ index });
 
   renderHeader = props => <TabBar
-                            tabStyle={BasicStyles.tabStyle}
-                            style={BasicStyles.tab}
-                            indicatorStyle={BasicStyles.indicator}
+                            tabStyle={BasicStyles.active_tab_style}
+                            // style={BasicStyles.tab}
                             labelStyle={BasicStyles.labelStyle}
                             {...props}
                           />;

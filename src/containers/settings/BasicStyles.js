@@ -13,6 +13,9 @@ const BasicStyles = StyleSheet.create({
     fontSize: font.searchFont,
     color: colors.black,
   },
+  paddingVertical: {
+    paddingVertical: 20,
+  },
 });
 
 export default BasicStyles;

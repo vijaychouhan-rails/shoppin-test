@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, FlatList, Image, Text } from 'react-native';
-import { Container, Content } from 'native-base';
+import { Container } from 'native-base';
 import Swiper from 'react-native-swiper';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -8,12 +8,15 @@ import HeaderView from '../../components/header/header';
 import constantsText from '../../constants/constantsText';
 import FooterView from '../../components/footer/footer';
 import BasicStyles from './BasicStyles';
+import colors from '../../constants/colors';
 import CommonStyles from '../../assets/CommonStyles';
 
 class ProductDetails extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      isShow: 1,
+    };
     this.showList = this.showList.bind(this);
   }
 
@@ -58,30 +61,27 @@ class ProductDetails extends Component {
         style={CommonStyles.backgroundColor}
       >
         <HeaderView title={this.props.data} />
-        <Content>
-          <View style={CommonStyles.imageSlider}>
-            <Swiper
-              style={BasicStyles.wrapper}
-              showsButtons={false}
-              activeDotColor={CommonStyles.activeDotColor}
-            >
-              <Image style={[BasicStyles.slide, BasicStyles.backgroundColor1]} />
-              <Image style={[BasicStyles.slide, BasicStyles.backgroundColor2]} />
-              <Image style={[BasicStyles.slide, BasicStyles.backgroundColor1]} />
-              <Image style={[BasicStyles.slide, BasicStyles.backgroundColor3]} />
-            </Swiper>
-          </View>
-          <Text style={[BasicStyles.textStyle, CommonStyles.fontStyle]}>
-            {this.props.data}
-          </Text>
-          <Text style={[BasicStyles.textStyle, CommonStyles.fontStyle, CommonStyles.border_style,
-            BasicStyles.paddingBoth]}
+        <View style={[CommonStyles.imageSlider, BasicStyles.imageSlider]}>
+          <Swiper
+            showsButtons={false}
+            activeDotColor={colors.black}
           >
-            {constantsText.title_of_list}
-          </Text>
-          {this.showList()}
-        </Content>
-        <FooterView />
+            <Image style={[BasicStyles.slide, BasicStyles.backgroundColor1]} />
+            <Image style={[BasicStyles.slide, BasicStyles.backgroundColor2]} />
+            <Image style={[BasicStyles.slide, BasicStyles.backgroundColor1]} />
+            <Image style={[BasicStyles.slide, BasicStyles.backgroundColor3]} />
+          </Swiper>
+        </View>
+        <Text style={[BasicStyles.textStyle, CommonStyles.fontStyle]}>
+          {this.props.data}
+        </Text>
+        <Text style={[BasicStyles.textStyle, CommonStyles.fontStyle, CommonStyles.border_style,
+          BasicStyles.paddingBoth]}
+        >
+          {constantsText.title_of_list}
+        </Text>
+        {this.showList()}
+        <FooterView products={this.state.isShow} />
       </Container>
     );
   }

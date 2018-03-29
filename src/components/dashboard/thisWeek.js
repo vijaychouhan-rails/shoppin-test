@@ -8,7 +8,7 @@ const ThisWeek = () => (
   <View
     style={CommonStyles.background}
   >
-    <ScrollView>
+    <ScrollView showsVerticalScrollIndicator={false}>
       <View style={BasicStyles.margin}>
         <Text style={[BasicStyles.fontStyle, CommonStyles.marginTop]}>{constantsText.totalSale}
         </Text>

@@ -15,32 +15,36 @@ const CollectionList = props => (
           BasicStyles.marginTop, CommonStyles.centerContent]}
         onPress={() => Actions.viewCollections(listItem.item.product_name)}
       >
-        <View style={[CommonStyles.directionRow, CommonStyles.centerContent]}>
+        <View style={[CommonStyles.directionRow, CommonStyles.centerContent, CommonStyles.flex]}>
           <Image
             style={CommonStyles.imageStyle}
           />
-          <View>
-            <Text style={[BasicStyles.textStyle, CommonStyles.fontStyle]}>
-              {listItem.item.product_name}
-            </Text>
-            <View style={[CommonStyles.directionRow, BasicStyles.marginTop]}>
-              <Text style={[BasicStyles.margin, CommonStyles.fontColor]}>
-                {listItem.item.no_of_products}
+          <View style={[CommonStyles.directionRow, CommonStyles.border, CommonStyles.flex,
+            CommonStyles.spaceBetween, BasicStyles.paddingVertical]}
+          >
+            <View>
+              <Text style={[BasicStyles.textStyle, CommonStyles.fontStyle]}>
+                {listItem.item.product_name}
               </Text>
-              <Text style={[BasicStyles.margin, CommonStyles.fontColor]}>
-                {listItem.item.variants}
-              </Text>
+              <View style={[CommonStyles.directionRow, BasicStyles.marginTop]}>
+                <Text style={[BasicStyles.margin, CommonStyles.fontColor]}>
+                  {listItem.item.no_of_products}
+                </Text>
+                <Text style={[BasicStyles.margin, CommonStyles.fontColor]}>
+                  {listItem.item.variants}
+                </Text>
+              </View>
             </View>
+            <TouchableOpacity onPress={() => Actions.viewCollections(listItem.item.product_name)}>
+              <Icon
+                name="angle-right"
+                style={CommonStyles.rightIcon}
+                size={30}
+              />
+            </TouchableOpacity>
           </View>
-
         </View>
-        <TouchableOpacity onPress={() => Actions.viewCollections(listItem.item.product_name)}>
-          <Icon
-            name="angle-right"
-            style={CommonStyles.rightIcon}
-            size={30}
-          />
-        </TouchableOpacity>
+
       </TouchableOpacity>
     )}
     keyExtractor={(item, index) => index.toString()}

@@ -24,8 +24,8 @@ class Settings extends Component {
           <Text style={[CommonStyles.fontStyle, CommonStyles.marginTop, CommonStyles.fontBold]}>
             {constantsText.app_setings}
           </Text>
-          <View style={[CommonStyles.directionRow, CommonStyles.spaceBetween,
-            BasicStyles.marginTop, BasicStyles.marginHorizontal]}
+          <View style={[CommonStyles.directionRow, CommonStyles.spaceBetween, CommonStyles.border,
+            BasicStyles.paddingVertical, BasicStyles.marginTop, BasicStyles.marginHorizontal]}
           >
             <View>
               <Text style={[BasicStyles.listedText, CommonStyles.fontBold]}>
@@ -37,8 +37,8 @@ class Settings extends Component {
             </View>
             <Switch />
           </View>
-          <View style={[CommonStyles.directionRow, CommonStyles.spaceBetween,
-            BasicStyles.marginHorizontal, BasicStyles.marginTop]}
+          <View style={[CommonStyles.directionRow, CommonStyles.spaceBetween, CommonStyles.border,
+            BasicStyles.paddingVertical, BasicStyles.marginHorizontal, BasicStyles.marginTop]}
           >
             <View>
               <Text style={[BasicStyles.listedText, CommonStyles.fontBold]}>

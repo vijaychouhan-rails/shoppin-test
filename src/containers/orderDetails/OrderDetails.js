@@ -31,7 +31,8 @@ class OrderDetails extends Component {
                 style={CommonStyles.imageStyle}
               />
               <View style={[CommonStyles.directionRow, CommonStyles.centerContent,
-                CommonStyles.spaceBetween, BasicStyles.flex]}
+                BasicStyles.paddingVertical, CommonStyles.border, CommonStyles.spaceBetween,
+                CommonStyles.flex]}
               >
                 <View style={[BasicStyles.marginTop, BasicStyles.marginLeft]}>
                   <Text style={CommonStyles.fontStyle}>
@@ -63,7 +64,7 @@ class OrderDetails extends Component {
     return (
       <Container style={CommonStyles.background}>
         <HeaderView title={params.hash} />
-        <ScrollView style={CommonStyles.marginBoth}>
+        <ScrollView style={CommonStyles.marginBoth} showsVerticalScrollIndicator={false}>
           <View style={[CommonStyles.flexStyle, BasicStyles.marginTop]}>
             <Text style={[CommonStyles.standardFont, CommonStyles.fontBold]}>
               {constantsText.order}

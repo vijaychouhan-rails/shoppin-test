@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 import colors from '../../constants/colors';
 import font from '../../constants/font';
+import standardFormat from '../../constants/standardFormat';
 
 const BasicStyles = StyleSheet.create({
   customer_image: {
@@ -26,16 +27,15 @@ const BasicStyles = StyleSheet.create({
   extraMarginTop: {
     marginTop: 15,
   },
-  wrapper: {
-    height: 200,
-    width: 200,
-  },
   border_style: {
     borderBottomWidth: 1,
     borderColor: colors.lightGrey,
   },
   sliderView: {
     height: 200,
+  },
+  imageSlider: {
+    paddingHorizontal: standardFormat.imageSlider_margin_horizontal,
   },
 });
 

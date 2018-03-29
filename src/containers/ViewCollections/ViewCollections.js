@@ -15,7 +15,9 @@ import colors from '../../constants/colors';
 class ViewCollections extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      isShow: 1,
+    };
   }
   render() {
     return (
@@ -45,7 +47,7 @@ class ViewCollections extends Component {
           </View>
           <ViewCollectionsList view_collection_list={this.props.view_collection_list} />
         </Content>
-        <FooterView />
+        <FooterView products={this.state.isShow} />
       </Container>
     );
   }

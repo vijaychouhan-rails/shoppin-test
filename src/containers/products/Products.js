@@ -26,7 +26,7 @@ class Products extends Component {
         style={CommonStyles.background}
       >
         <HeaderView title={constantsText.products} />
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <View
             style={CommonStyles.searchView}
           >
@@ -58,10 +58,8 @@ Products.propTypes = {
   productList: PropTypes.instanceOf(Array).isRequired,
 };
 
-const mapStateToProps = (state) => {
-  debugger
-  return {
-    productList: state.get('productList').toJS(),
-  }
-}
+const mapStateToProps = state => ({
+  productList: state.get('productList').toJS(),
+});
+
 export default connect(mapStateToProps)(Products);

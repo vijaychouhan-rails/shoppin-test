@@ -27,6 +27,8 @@ const standardFormat = {
   list_margin: height / 50,
   arrow_top_margin: height / 30,
   setting_top_margin: height / 60,
+  image_slider_padding: width / 30,
+  imageSlider_margin_horizontal: width / 5,
 };
 
 export default standardFormat;

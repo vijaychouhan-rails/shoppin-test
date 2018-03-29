@@ -10,21 +10,23 @@ const BasicStyles = StyleSheet.create({
   tab: {
     height: 35,
     borderRadius: 5,
-    borderWidth: 2,
-    backgroundColor: colors.white,
+    overflow: 'hidden',
+    borderBottomWidth: 1,
+    backgroundColor: colors.bluecolor,
     borderColor: colors.bluecolor,
   },
-  tabStyle: {
+  active_tab_style: {
     backgroundColor: colors.white,
     borderColor: colors.bluecolor,
     borderWidth: 1,
   },
-  labelStyle: {
-    flex: 1,
+  tab_style: {
     backgroundColor: colors.bluecolor,
+    borderColor: colors.bluecolor,
+    borderWidth: 1,
   },
-  indicator: {
-    backgroundColor: colors.bluecolor,
+  labelStyle: {
+    color: colors.bluecolor,
   },
   container: {
     justifyContent: 'center',

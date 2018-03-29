@@ -23,6 +23,9 @@ const BasicStyles = StyleSheet.create({
   margin: {
     marginLeft: 10,
   },
+  paddingVertical: {
+    paddingVertical: 27,
+  },
 });
 
 export default BasicStyles;

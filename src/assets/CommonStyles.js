@@ -136,7 +136,6 @@ const CommonStyles = StyleSheet.create({
     backgroundColor: colors.white,
   },
   border_style: {
-    borderTopWidth: 1,
     borderBottomWidth: 1,
     borderColor: colors.greyColor,
   },
@@ -173,6 +172,9 @@ const CommonStyles = StyleSheet.create({
   border: {
     borderBottomWidth: 1,
     borderColor: colors.imageGrayColor,
+  },
+  flex: {
+    flex: 1,
   },
 });
 

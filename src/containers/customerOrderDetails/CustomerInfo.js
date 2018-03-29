@@ -28,7 +28,9 @@ class CustomerInfo extends Component {
       <FlatList
         data={orders}
         renderItem={listItem => (
-          <TouchableOpacity style={[CommonStyles.listView, BasicStyles.marginTop, CommonStyles.border]}>
+          <TouchableOpacity style={[CommonStyles.listView, BasicStyles.marginTop,
+            CommonStyles.border]}
+          >
             <View style={[CommonStyles.directionRow, CommonStyles.spaceBetween]}>
               <View>
                 <Text style={BasicStyles.textStyle}>{listItem.item.date}</Text>
@@ -80,7 +82,10 @@ class CustomerInfo extends Component {
     return (
       <Container style={CommonStyles.background}>
         <HeaderView title={this.props.data} />
-        <ScrollView style={[CommonStyles.marginTop, CommonStyles.marginBottom]}>
+        <ScrollView
+          style={[CommonStyles.marginTop, CommonStyles.marginBottom]}
+          showsVerticalScrollIndicator={false}
+        >
           <View style={[CommonStyles.directionRow, BasicStyles.marginTop, BasicStyles.border_style,
             CommonStyles.marginBottom, CommonStyles.spaceBetween, CommonStyles.centerContent]}
           >
@@ -113,10 +118,9 @@ class CustomerInfo extends Component {
           <Text style={[CommonStyles.fontStyle, BasicStyles.marginTop]}>
             {constantsText.note_content}
           </Text>
-          <View style={BasicStyles.sliderView}>
-            <View style={CommonStyles.imageSlider}>
+          <View style={[BasicStyles.sliderView, CommonStyles.centerContent]}>
+            <View style={[CommonStyles.imageSlider, BasicStyles.imageSlider]}>
               <Swiper
-                style={BasicStyles.wrapper}
                 showsButtons={false}
                 activeDotColor={colors.black}
                 showsPagination
@@ -164,7 +168,6 @@ class CustomerInfo extends Component {
 CustomerInfo.propTypes = {
   data: PropTypes.string.isRequired,
   orders: PropTypes.instanceOf(Array).isRequired,
-
 };
 
 const mapStateToProps = state => ({

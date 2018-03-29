@@ -41,11 +41,11 @@ const BasicStyles = StyleSheet.create({
   paddingRight: {
     paddingRight: 10,
   },
-  flex: {
-    flex: 1,
-  },
   alignRight: {
     justifyContent: 'flex-end',
+  },
+  paddingVertical: {
+    paddingVertical: 14,
   },
 });
 

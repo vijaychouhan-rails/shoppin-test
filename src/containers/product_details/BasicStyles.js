@@ -6,6 +6,7 @@ import standardFormat from '../../constants/standardFormat';
 const BasicStyles = StyleSheet.create({
   marginTop: {
     marginTop: 7,
+    marginLeft: 10,
   },
   textStyle: {
     marginLeft: 10,
@@ -16,11 +17,6 @@ const BasicStyles = StyleSheet.create({
   },
   paddingBoth: {
     paddingVertical: 10,
-  },
-  wrapper: {
-    marginTop: 10,
-    height: standardFormat.productImageView,
-    width: standardFormat.searchWidth,
   },
   slide: {
     height: standardFormat.productImage,
@@ -40,6 +36,9 @@ const BasicStyles = StyleSheet.create({
     color: '#fff',
     fontSize: 30,
     fontWeight: 'bold',
+  },
+  imageSlider: {
+    margin: standardFormat.image_slider_padding,
   },
 });
 
