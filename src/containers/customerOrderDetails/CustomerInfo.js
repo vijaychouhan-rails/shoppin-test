@@ -80,10 +80,10 @@ class CustomerInfo extends Component {
 
   render() {
     return (
-      <Container style={CommonStyles.background}>
+      <Container style={[CommonStyles.backgroundColor, BasicStyles.flex]}>
         <HeaderView title={this.props.data} />
         <ScrollView
-          style={[CommonStyles.marginTop, CommonStyles.marginBottom]}
+          style={[CommonStyles.marginTop, CommonStyles.marginBottom, BasicStyles.flex]}
           showsVerticalScrollIndicator={false}
         >
           <View style={[CommonStyles.directionRow, BasicStyles.marginTop, BasicStyles.border_style,

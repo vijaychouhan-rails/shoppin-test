@@ -24,7 +24,7 @@ const BasicStyles = StyleSheet.create({
     alignItems: 'center',
   },
   backgroundColor1: {
-    backgroundColor: colors.screen1,
+    backgroundColor: colors.lightGrey,
   },
   backgroundColor2: {
     backgroundColor: colors.screen1,

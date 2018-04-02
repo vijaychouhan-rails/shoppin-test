@@ -12,6 +12,7 @@ const colors = {
   screen1: '#9DD6EB',
   screen2: '#97CAE5',
   screen3: '#92BBD9',
+  green: '#00D96D',
 };
 
 export default colors;

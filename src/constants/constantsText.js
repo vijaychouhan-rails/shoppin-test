@@ -53,5 +53,8 @@ const constantsText = {
   badgeAppIcon: 'Badge App Icon',
   logOut: 'Log out',
   product_price: 'US$0.00',
+  today: 'Today',
+  yesterday: 'Yesterday',
+  this_week: 'This Week',
 };
 export default constantsText;

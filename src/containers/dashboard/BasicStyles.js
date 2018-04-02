@@ -32,6 +32,9 @@ const BasicStyles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: colors.white,
   },
+  underLineColor: {
+    backgroundColor: colors.bluecolor,
+  },
 });
 
 export default BasicStyles;

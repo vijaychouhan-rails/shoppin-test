@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 import standardFormat from '../../constants/standardFormat';
 
 const BasicStyles = StyleSheet.create({
@@ -17,6 +17,9 @@ const BasicStyles = StyleSheet.create({
   },
   topMargin: {
     marginTop: standardFormat.forgot_password_margin,
+  },
+  fontType: {
+    fontFamily: Platform.OS === 'ios' && 'San Francisco',
   },
 });
 

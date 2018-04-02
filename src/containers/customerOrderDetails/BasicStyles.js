@@ -37,6 +37,9 @@ const BasicStyles = StyleSheet.create({
   imageSlider: {
     paddingHorizontal: standardFormat.imageSlider_margin_horizontal,
   },
+  flex: {
+    paddingHorizontal: 5,
+  },
 });
 
 export default BasicStyles;

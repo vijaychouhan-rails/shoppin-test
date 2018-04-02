@@ -16,6 +16,9 @@ const BasicStyles = StyleSheet.create({
   paddingVertical: {
     paddingVertical: 20,
   },
+  onTintColor: {
+    // color: colors.green,
+  },
 });
 
 export default BasicStyles;

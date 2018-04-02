@@ -22,7 +22,8 @@ const FooterView = props => (
       <Button vertical onPress={Actions.dashboard}>
         <Icon name="star" size={25} style={props.dashboard ? BasicStyles.iconBlue : BasicStyles.icon} />
         <Text
-          style={[BasicStyles.footerText, BasicStyles.marginTop]}
+          style={props.dashboard ? [BasicStyles.footerText, BasicStyles.marginTop,
+            BasicStyles.backgroundColor] : [BasicStyles.footerText, BasicStyles.marginTop]}
         >
           {constantsText.home}
         </Text>
@@ -30,7 +31,8 @@ const FooterView = props => (
       <Button vertical onPress={Actions.orders}>
         <Icon name="circle" size={25} style={props.orders ? BasicStyles.iconBlue : BasicStyles.icon} />
         <Text
-          style={[BasicStyles.footerText, BasicStyles.marginTop]}
+          style={props.orders ? [BasicStyles.footerText, BasicStyles.marginTop,
+            BasicStyles.backgroundColor] : [BasicStyles.footerText, BasicStyles.marginTop]}
         >
           {constantsText.orders}
         </Text>
@@ -38,7 +40,8 @@ const FooterView = props => (
       <Button vertical onPress={Actions.products}>
         <Icon name="square" size={25} style={props.products ? BasicStyles.iconBlue : BasicStyles.icon} />
         <Text
-          style={[BasicStyles.footerText, BasicStyles.marginTop]}
+          style={props.products ? [BasicStyles.footerText, BasicStyles.marginTop,
+            BasicStyles.backgroundColor] : [BasicStyles.footerText, BasicStyles.marginTop]}
         >
           {constantsText.products}
         </Text>
@@ -46,7 +49,8 @@ const FooterView = props => (
       <Button vertical onPress={Actions.settings}>
         <Icon name="exclamation-triangle" size={25} style={props.settings ? BasicStyles.iconBlue : BasicStyles.icon} />
         <Text
-          style={[BasicStyles.footerText, BasicStyles.marginTop]}
+          style={props.settings ? [BasicStyles.footerText, BasicStyles.marginTop,
+            BasicStyles.backgroundColor] : [BasicStyles.footerText, BasicStyles.marginTop]}
         >
           {constantsText.settings}
         </Text>

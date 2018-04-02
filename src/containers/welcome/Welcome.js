@@ -3,10 +3,9 @@ import { View, TouchableOpacity, TextInput, Text, ScrollView } from 'react-nativ
 import { Button } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 import CommonStyles from '../../assets/CommonStyles';
-import constantsText from '../../constants/constantsText';
 import BasicStyles from './BasicStyles';
+import constantsText from '../../constants/constantsText';
 import colors from '../../constants/colors';
-
 
 class Welcome extends Component {
   constructor(props) {
@@ -21,7 +20,7 @@ class Welcome extends Component {
         <ScrollView>
           <View style={CommonStyles.background}>
             <Text
-              style={[CommonStyles.HeadingText, BasicStyles.titleMargin]}
+              style={[CommonStyles.HeadingText, BasicStyles.titleMargin, BasicStyles.fontType]}
             >
               {constantsText.shoppin}
             </Text>

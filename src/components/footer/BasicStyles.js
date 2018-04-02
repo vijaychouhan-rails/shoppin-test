@@ -19,6 +19,9 @@ const BasicStyles = StyleSheet.create({
   iconBlue: {
     color: colors.bluecolor,
   },
+  backgroundColor: {
+    color: colors.bluecolor,
+  },
 });
 
 export default BasicStyles;
