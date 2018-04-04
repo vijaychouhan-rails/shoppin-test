@@ -25,10 +25,15 @@ const standardFormat = {
   forgot_password_margin: height / 30,
   listMargin: height / 35,
   list_margin: height / 50,
-  arrow_top_margin: height / 30,
+  arrow_top_margin: height / 25,
   setting_top_margin: height / 60,
   image_slider_padding: width / 30,
   imageSlider_margin_horizontal: width / 5,
+  background_height: height,
+  logo_place: height / 7.5,
+  logo_textplace: height / 35,
+  regular: '500',
+  medium: '700',
 };
 
 export default standardFormat;

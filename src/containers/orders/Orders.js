@@ -57,7 +57,7 @@ class Orders extends Component {
               <Text style={CommonStyles.nameStyle}>
                 {listItem.item.name}
               </Text>
-              <Text style={CommonStyles.nameStyle}>
+              <Text style={CommonStyles.rsStyle}>
                 {listItem.item.rs}
               </Text>
             </View>

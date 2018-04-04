@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container } from 'native-base';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
+import DefaultTabBar from './customBar';
 import constantsText from '../../constants/constantsText';
 import HeaderView from '../../components/header/header';
 import FooterView from '../../components/footer/footer';
@@ -26,9 +27,12 @@ class DashBoard extends Component {
         <HeaderView title={constantsText.Dashboard} />
         <ScrollableTabView
           initialPage={0}
+          style={BasicStyles.tab}
           tabBarBackgroundColor={colors.white}
-          tabBarActiveTextColor={colors.bluecolor}
+          tabBarActiveTextColor={colors.white}
+          tabBarInactiveTextColor={colors.bluecolor}
           tabBarUnderlineStyle={BasicStyles.underLineColor}
+          renderTabBar={() => <DefaultTabBar />}
         >
           <Today tabLabel={constantsText.today} />
           <Yesterday tabLabel={constantsText.yesterday} />

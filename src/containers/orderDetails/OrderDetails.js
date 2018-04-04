@@ -9,6 +9,7 @@ import CommonStyles from '../../assets/CommonStyles';
 import HeaderView from '../../components/header/header';
 import BasicStyles from './BasicStyles';
 import constantsText from '../../constants/constantsText';
+import { PROFILE_PIC } from '../../constants/images';
 
 class OrderDetails extends Component {
   constructor(props) {
@@ -48,7 +49,7 @@ class OrderDetails extends Component {
                   </Text>
                 </View>
                 <TouchableOpacity style={BasicStyles.circleIcon}>
-                  <Text style={CommonStyles.nameStyle}>2</Text>
+                  <Text style={BasicStyles.circleIconText}>2</Text>
                 </TouchableOpacity>
               </View>
             </View>
@@ -62,7 +63,7 @@ class OrderDetails extends Component {
   render() {
     const { params } = this.props.navigation.state;
     return (
-      <Container style={CommonStyles.background}>
+      <Container style={[CommonStyles.background, CommonStyles.commonMarginBottom]}>
         <HeaderView title={params.hash} />
         <ScrollView style={CommonStyles.marginBoth} showsVerticalScrollIndicator={false}>
           <View style={[CommonStyles.flexStyle, BasicStyles.marginTop]}>
@@ -84,8 +85,11 @@ class OrderDetails extends Component {
               {params.fulfiled}
             </Text>
           </View>
-          <View style={[CommonStyles.border_style, BasicStyles.marginTop]}>
-            <Text style={[BasicStyles.marginTop, CommonStyles.nameStyle, CommonStyles.fontBold]}>
+          <TouchableOpacity
+            style={[CommonStyles.border_style, BasicStyles.marginTop]}
+            onPress={() => Actions.customer_details(params.name)}
+          >
+            <Text style={[BasicStyles.marginTop, BasicStyles.nameStyle, CommonStyles.fontBold]}>
               {constantsText.customer}
             </Text>
             <View style={[CommonStyles.directionRow, CommonStyles.spaceBetween, BasicStyles.padding,
@@ -94,9 +98,10 @@ class OrderDetails extends Component {
               <View style={CommonStyles.directionRow}>
                 <Image
                   style={BasicStyles.customer_image}
+                  source={PROFILE_PIC}
                 />
                 <View style={[BasicStyles.marginLeft, CommonStyles.justifyContent]}>
-                  <Text style={[CommonStyles.standardFont, CommonStyles.fontBold]}>
+                  <Text style={[BasicStyles.nameStyle, CommonStyles.fontBold]}>
                     {params.name}
                   </Text>
                   <Text style={[CommonStyles.fontColor, CommonStyles.marginTop,
@@ -114,43 +119,43 @@ class OrderDetails extends Component {
                 />
               </TouchableOpacity>
             </View>
-          </View>
-          <Text style={[CommonStyles.nameStyle, CommonStyles.fontBold, BasicStyles.marginTop]}>
+          </TouchableOpacity>
+          <Text style={[BasicStyles.nameStyle, CommonStyles.fontBold, BasicStyles.marginTop]}>
             {constantsText.shippingAddressText}
           </Text>
-          <Text style={[CommonStyles.fontStyle, BasicStyles.marginTop]}>{params.name}</Text>
+          <Text style={[BasicStyles.fontStyle, BasicStyles.marginTop]}>{params.name}</Text>
           <TextInput
             multiline
             numberOfLines={4}
-            style={[CommonStyles.fontStyle, BasicStyles.addressWidth]}
+            style={[BasicStyles.fontStyle, BasicStyles.addressWidth]}
             editable={false}
             value={constantsText.shippingAddress}
           />
-          <Text style={[CommonStyles.nameStyle, CommonStyles.fontBold, BasicStyles.marginTop]}>
+          <Text style={[BasicStyles.nameStyle, CommonStyles.fontBold, BasicStyles.marginTop]}>
             {constantsText.billingAddressText}
           </Text>
           <Text style={[CommonStyles.fontStyle, BasicStyles.marginTop]}>{params.name}</Text>
           <TextInput
             multiline
             numberOfLines={4}
-            style={[CommonStyles.fontStyle, BasicStyles.addressWidth]}
+            style={[BasicStyles.fontStyle, BasicStyles.addressWidth]}
             underlineColorAndroid="transparent"
             editable={false}
             value={constantsText.shippingAddress}
           />
-          <Text style={[CommonStyles.nameStyle, CommonStyles.fontBold, BasicStyles.marginTop]}>
+          <Text style={[BasicStyles.nameStyle, CommonStyles.fontBold, BasicStyles.marginTop]}>
             {constantsText.contact}
           </Text>
-          <Text style={[CommonStyles.fontStyle, BasicStyles.marginTop]}>
+          <Text style={[BasicStyles.fontStyle, BasicStyles.marginTop]}>
             {constantsText.emailID}
           </Text>
           <View style={[CommonStyles.directionRow,
             CommonStyles.marginTop, CommonStyles.spaceBetween]}
           >
-            <Text style={[CommonStyles.nameStyle, BasicStyles.marginTop]}>
+            <Text style={[BasicStyles.nameStyle, BasicStyles.marginTop]}>
               {constantsText.title}
             </Text>
-            <Text style={[CommonStyles.fontStyle, BasicStyles.sub_margin_top]}>
+            <Text style={[CommonStyles.fulfiled, BasicStyles.sub_margin_top]}>
               {params.fulfiled}
             </Text>
           </View>
@@ -167,52 +172,54 @@ class OrderDetails extends Component {
           >
             {constantsText.tracking_number}
           </Text>
-          <Text style={[CommonStyles.fontStyle, CommonStyles.fontBold, CommonStyles.marginTop]}>
+          <Text style={[BasicStyles.fontStyle, CommonStyles.fontBold, CommonStyles.marginTop]}>
             {constantsText.tracking_number_text}
           </Text>
           {this.showProductList()}
           <View style={[CommonStyles.directionRow, BasicStyles.view_border_style,
             CommonStyles.marginTop, CommonStyles.spaceBetween]}
           >
-            <Text style={[CommonStyles.nameStyle, BasicStyles.marginTop,
+            <Text style={[BasicStyles.nameStyle, BasicStyles.marginTop,
               CommonStyles.fontBold]}
             >
               {constantsText.orderSummadry}
             </Text>
-            <Text style={[CommonStyles.fontStyle, BasicStyles.sub_margin_top]}>
+            <Text style={[CommonStyles.fontStyle, BasicStyles.marginTop]}>
               {params.payment}
             </Text>
           </View>
           <View style={[CommonStyles.directionRow, CommonStyles.spaceBetween]}>
-            <Text style={[CommonStyles.fontStyle, BasicStyles.marginTop, CommonStyles.fontBold]}>
+            <Text style={[BasicStyles.fontStyle, BasicStyles.marginTop]}>
               {constantsText.sub_total_text}
             </Text>
-            <Text style={[CommonStyles.fontStyle, CommonStyles.marginTop]}>
-              {constantsText.sub_total_text}
+            <Text style={[BasicStyles.fontStyle, BasicStyles.marginTop]}>
+              {constantsText.sub_total_amt}
             </Text>
           </View>
           <View style={[CommonStyles.directionRow, CommonStyles.spaceBetween]}>
-            <Text style={[CommonStyles.fontStyle, CommonStyles.marginTop, CommonStyles.fontBold]}>
+            <Text style={[BasicStyles.fontStyle, CommonStyles.marginTop]}>
               {constantsText.shipping_charge_text}
             </Text>
-            <Text style={[CommonStyles.fontStyle, CommonStyles.marginTop, CommonStyles.fontBold]}>
+            <Text style={[BasicStyles.fontStyle, CommonStyles.marginTop]}>
               {constantsText.shipping_charge}
             </Text>
           </View>
-          <View style={[CommonStyles.directionRow, CommonStyles.spaceBetween]}>
-            <Text style={[CommonStyles.fontStyle, CommonStyles.marginTop, CommonStyles.fontBold]}>
-              {constantsText.total_text}
+          <View style={[CommonStyles.border, CommonStyles.paddingBottom]}>
+            <View style={[CommonStyles.directionRow, CommonStyles.spaceBetween]}>
+              <Text style={[BasicStyles.fontStyle, CommonStyles.marginTop, CommonStyles.fontBold]}>
+                {constantsText.total_text}
+              </Text>
+              <Text style={[BasicStyles.fontStyle, CommonStyles.marginTop, CommonStyles.fontBold]}>
+                {constantsText.total}
+              </Text>
+            </View>
+            <Text style={[BasicStyles.nameStyle, BasicStyles.marginTop, CommonStyles.fontBold]}>
+              {constantsText.note}
             </Text>
-            <Text style={[CommonStyles.fontStyle, CommonStyles.marginTop, CommonStyles.fontBold]}>
-              {constantsText.total}
+            <Text style={[BasicStyles.fontStyle, BasicStyles.marginTop]}>
+              {constantsText.note_content}
             </Text>
           </View>
-          <Text style={[CommonStyles.nameStyle, BasicStyles.marginTop, CommonStyles.fontBold]}>
-            {constantsText.note}
-          </Text>
-          <Text style={[CommonStyles.fontStyle, BasicStyles.marginTop]}>
-            {constantsText.note_content}
-          </Text>
         </ScrollView>
       </Container>
     );
@@ -220,7 +227,7 @@ class OrderDetails extends Component {
 }
 
 const mapStateToProps = state => ({
-  orders: state.get('orderDetails').toJS(),
+  orders: state.get('order_details').toJS(),
 });
 
 OrderDetails.propTypes = {

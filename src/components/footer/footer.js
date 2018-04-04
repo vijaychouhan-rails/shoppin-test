@@ -47,7 +47,7 @@ const FooterView = props => (
         </Text>
       </Button>
       <Button vertical onPress={Actions.settings}>
-        <Icon name="exclamation-triangle" size={25} style={props.settings ? BasicStyles.iconBlue : BasicStyles.icon} />
+        <Icon name="cog" size={25} style={props.settings ? BasicStyles.iconBlue : BasicStyles.icon} />
         <Text
           style={props.settings ? [BasicStyles.footerText, BasicStyles.marginTop,
             BasicStyles.backgroundColor] : [BasicStyles.footerText, BasicStyles.marginTop]}

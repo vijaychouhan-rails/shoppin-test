@@ -10,7 +10,13 @@ const BasicStyles = StyleSheet.create({
   },
   textStyle: {
     marginLeft: 10,
+    fontFamily: font.roboto,
+  },
+  fontSizeHeading: {
     fontSize: font.searchFont,
+  },
+  fontSize: {
+    fontSize: font.font,
   },
   margin: {
     marginLeft: 10,
@@ -20,6 +26,7 @@ const BasicStyles = StyleSheet.create({
   },
   slide: {
     height: standardFormat.productImage,
+    alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -39,6 +46,10 @@ const BasicStyles = StyleSheet.create({
   },
   imageSlider: {
     margin: standardFormat.image_slider_padding,
+  },
+  slideImage: {
+    height: 150,
+    width: 200,
   },
 });
 

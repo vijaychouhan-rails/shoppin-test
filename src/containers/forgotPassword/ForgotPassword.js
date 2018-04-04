@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { TextInput, Text } from 'react-native';
 import { Button, Container } from 'native-base';
+import { Actions } from 'react-native-router-flux';
 import CommonStyles from '../../assets/CommonStyles';
 import constantsText from '../../constants/constantsText';
 import HeaderView from '../../components/header/header';
@@ -21,7 +22,7 @@ class ForgotPassword extends Component {
           placeholder={constantsText.email}
           placeholderTextColor={colors.pureGray}
         />
-        <Button full dark style={BasicStyles.marginTop}>
+        <Button full dark style={BasicStyles.marginTop} onPress={Actions.welcome}>
           <Text style={[CommonStyles.textStyle, CommonStyles.textColorWhite]}>
             {constantsText.Change_Password}
           </Text>

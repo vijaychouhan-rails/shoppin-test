@@ -13,6 +13,8 @@ class Settings extends Component {
     super(props);
     this.state = {
       isShow: 1,
+      isOnPushNotification: false,
+      isOnBadgeAppIcon: false,
     };
   }
 
@@ -24,8 +26,11 @@ class Settings extends Component {
           <Text style={[CommonStyles.fontStyle, CommonStyles.marginTop, CommonStyles.fontBold]}>
             {constantsText.app_setings}
           </Text>
-          <View style={[CommonStyles.directionRow, CommonStyles.spaceBetween, CommonStyles.border,
-            BasicStyles.paddingVertical, BasicStyles.marginTop, BasicStyles.marginHorizontal]}
+          <TouchableOpacity
+            style={[CommonStyles.directionRow, CommonStyles.spaceBetween, CommonStyles.border,
+              BasicStyles.paddingVertical, BasicStyles.marginTop, BasicStyles.marginHorizontal]}
+            onPress={() =>
+              this.setState({ isOnPushNotification: !this.state.isOnPushNotification })}
           >
             <View>
               <Text style={[BasicStyles.listedText, CommonStyles.fontBold]}>
@@ -35,10 +40,17 @@ class Settings extends Component {
                 {constantsText.orders}
               </Text>
             </View>
-            <Switch />
-          </View>
-          <View style={[CommonStyles.directionRow, CommonStyles.spaceBetween, CommonStyles.border,
-            BasicStyles.paddingVertical, BasicStyles.marginHorizontal, BasicStyles.marginTop]}
+            <Switch
+              onValueChange={() =>
+                this.setState({ isOnPushNotification: !this.state.isOnPushNotification })}
+              value={this.state.isOnPushNotification}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[CommonStyles.directionRow, CommonStyles.spaceBetween, CommonStyles.border,
+              BasicStyles.paddingVertical, BasicStyles.marginHorizontal, BasicStyles.marginTop]}
+            onPress={() =>
+              this.setState({ isOnBadgeAppIcon: !this.state.isOnBadgeAppIcon })}
           >
             <View>
               <Text style={[BasicStyles.listedText, CommonStyles.fontBold]}>
@@ -48,8 +60,12 @@ class Settings extends Component {
                 {constantsText.orders}
               </Text>
             </View>
-            <Switch />
-          </View>
+            <Switch
+              onValueChange={() =>
+                this.setState({ isOnBadgeAppIcon: !this.state.isOnBadgeAppIcon })}
+              value={this.state.isOnBadgeAppIcon}
+            />
+          </TouchableOpacity>
           <TouchableOpacity
             onPress={Actions.welcome}
           >

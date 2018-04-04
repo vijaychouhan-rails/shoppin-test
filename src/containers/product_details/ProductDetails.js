@@ -10,6 +10,7 @@ import FooterView from '../../components/footer/footer';
 import BasicStyles from './BasicStyles';
 import colors from '../../constants/colors';
 import CommonStyles from '../../assets/CommonStyles';
+import { PRODUCT1, PRODUCT2, PRODUCT3, PRODUCT4, T_SHIRT } from '../../constants/images';
 
 class ProductDetails extends Component {
   constructor(props) {
@@ -23,24 +24,25 @@ class ProductDetails extends Component {
   showList() {
     return (
       <FlatList
-        data={this.props.productListDetails}
+        data={this.props.product_list_details}
         renderItem={listItem => (
           <View style={[CommonStyles.directionRow, CommonStyles.spaceBetween,
             BasicStyles.marginTop, CommonStyles.centerContent]}
           >
             <View style={[CommonStyles.directionRow, CommonStyles.centerContent]}>
               <Image
+                source={T_SHIRT}
                 style={CommonStyles.imageStyle}
               />
               <View style={BasicStyles.marginTop}>
-                <Text style={[BasicStyles.textStyle, CommonStyles.fontStyle]}>
+                <Text style={[BasicStyles.textStyle, BasicStyles.fontSize, CommonStyles.fontStyle]}>
                   {listItem.item.size}
                 </Text>
                 <View style={CommonStyles.directionRow}>
-                  <Text style={[BasicStyles.margin, CommonStyles.fontColor]}>
+                  <Text style={[BasicStyles.margin, BasicStyles.fontSize, CommonStyles.fontColor]}>
                     {listItem.item.rs}
                   </Text>
-                  <Text style={[BasicStyles.margin, CommonStyles.fontColor]}>
+                  <Text style={[BasicStyles.margin, BasicStyles.fontSize, CommonStyles.fontColor]}>
                     {listItem.item.product_code}
                   </Text>
                 </View>
@@ -66,17 +68,37 @@ class ProductDetails extends Component {
             showsButtons={false}
             activeDotColor={colors.black}
           >
-            <Image style={[BasicStyles.slide, BasicStyles.backgroundColor1]} />
-            <Image style={[BasicStyles.slide, BasicStyles.backgroundColor2]} />
-            <Image style={[BasicStyles.slide, BasicStyles.backgroundColor1]} />
-            <Image style={[BasicStyles.slide, BasicStyles.backgroundColor3]} />
+            <View style={BasicStyles.slide}>
+              <Image
+                source={PRODUCT1}
+                style={BasicStyles.slideImage}
+              />
+            </View>
+            <View style={BasicStyles.slide}>
+              <Image
+                source={PRODUCT2}
+                style={BasicStyles.slideImage}
+              />
+            </View>
+            <View style={BasicStyles.slide}>
+              <Image
+                source={PRODUCT3}
+                style={BasicStyles.slideImage}
+              />
+            </View>
+            <View style={BasicStyles.slide}>
+              <Image
+                source={PRODUCT4}
+                style={BasicStyles.slideImage}
+              />
+            </View>
           </Swiper>
         </View>
-        <Text style={[BasicStyles.textStyle, CommonStyles.fontStyle]}>
+        <Text style={[BasicStyles.textStyle, BasicStyles.fontSizeHeading]}>
           {this.props.data}
         </Text>
-        <Text style={[BasicStyles.textStyle, CommonStyles.fontStyle, CommonStyles.border_style,
-          BasicStyles.paddingBoth]}
+        <Text style={[BasicStyles.textStyle, CommonStyles.border_style,
+          BasicStyles.fontSizeHeading, BasicStyles.paddingBoth]}
         >
           {constantsText.title_of_list}
         </Text>
@@ -89,12 +111,12 @@ class ProductDetails extends Component {
 
 
 const mapStateToProps = state => ({
-  productListDetails: state.get('productListDetails').toJS(),
+  product_list_details: state.get('product_list_details').toJS(),
 });
 
 ProductDetails.propTypes = {
   data: PropTypes.string.isRequired,
-  productListDetails: PropTypes.instanceOf(Array).isRequired,
+  product_list_details: PropTypes.instanceOf(Array).isRequired,
 };
 
 

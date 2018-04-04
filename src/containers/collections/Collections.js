@@ -46,7 +46,7 @@ class Collections extends Component {
             />
           </View>
           <CollectioList collectionList={this.props.data === 'All Products' ?
-            this.props.all_products : this.props.collectionList}
+            this.props.all_products : this.props.collection_list}
           />
         </Content>
         <FooterView products={this.state.isShow} />
@@ -57,13 +57,13 @@ class Collections extends Component {
 
 Collections.propTypes = {
   data: PropTypes.string.isRequired,
-  collectionList: PropTypes.instanceOf(Array).isRequired,
+  collection_list: PropTypes.instanceOf(Array).isRequired,
   all_products: PropTypes.instanceOf(Array).isRequired,
 };
 
 
 const mapStateToProps = state => ({
-  collectionList: state.get('collectionList').toJS(),
+  collection_list: state.get('collection_list').toJS(),
   all_products: state.get('all_products').toJS(),
 
 });

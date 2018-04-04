@@ -21,7 +21,7 @@ const ProductsList = props => (
             style={BasicStyles.icon}
             size={50}
           />
-          <Text style={[BasicStyles.textStyle, CommonStyles.fontStyle,
+          <Text style={[BasicStyles.textStyle,
             BasicStyles.text_top_margin]}
           >
             {listItem.item}

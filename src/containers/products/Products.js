@@ -47,7 +47,7 @@ class Products extends Component {
               size={20}
             />
           </View>
-          <ProductsList productList={this.props.productList} />
+          <ProductsList productList={this.props.product_list} />
         </ScrollView>
         <FooterView products={this.state.isShow} />
       </Container>
@@ -55,11 +55,11 @@ class Products extends Component {
   }
 }
 Products.propTypes = {
-  productList: PropTypes.instanceOf(Array).isRequired,
+  product_list: PropTypes.instanceOf(Array).isRequired,
 };
 
 const mapStateToProps = state => ({
-  productList: state.get('productList').toJS(),
+  product_list: state.get('product_list').toJS(),
 });
 
 export default connect(mapStateToProps)(Products);

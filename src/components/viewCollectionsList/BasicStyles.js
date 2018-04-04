@@ -14,8 +14,9 @@ const BasicStyles = StyleSheet.create({
   },
   textStyle: {
     marginLeft: 10,
-    fontSize: font.searchFont,
-    fontWeight: font.fontBold,
+    fontSize: font.fontSize,
+    fontFamily: font.roboto,
+    fontWeight: font.medium,
   },
   icon: {
     color: colors.bluecolor,
@@ -25,6 +26,9 @@ const BasicStyles = StyleSheet.create({
   },
   paddingVertical: {
     paddingVertical: 27,
+  },
+  fontSize: {
+    fontSize: 12,
   },
 });
 

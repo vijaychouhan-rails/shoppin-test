@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import colors from '../../constants/colors';
-// import standardFormat from '../../constants/standardFormat';
+import font from '../../constants/font';
 
 const BasicStyles = StyleSheet.create({
   customer_image: {
@@ -8,7 +8,6 @@ const BasicStyles = StyleSheet.create({
     width: 70,
     borderRadius: 35,
     overflow: 'hidden',
-    backgroundColor: colors.greyColor,
   },
   marginLeft: {
     marginLeft: 10,
@@ -46,6 +45,20 @@ const BasicStyles = StyleSheet.create({
   },
   paddingVertical: {
     paddingVertical: 14,
+  },
+  nameStyle: {
+    fontFamily: font.roboto,
+    fontSize: 18,
+  },
+  fontStyle: {
+    fontFamily: font.roboto,
+    fontSize: 14,
+    fontWeight: font.medium,
+  },
+  circleIconText: {
+    fontFamily: font.roboto,
+    fontSize: 16,
+    fontWeight: font.medium,
   },
 });
 

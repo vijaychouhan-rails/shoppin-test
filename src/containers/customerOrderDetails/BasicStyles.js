@@ -9,7 +9,6 @@ const BasicStyles = StyleSheet.create({
     width: 70,
     borderRadius: 35,
     overflow: 'hidden',
-    backgroundColor: colors.lightGrey,
   },
   marginLeft: {
     marginLeft: 10,
@@ -39,6 +38,26 @@ const BasicStyles = StyleSheet.create({
   },
   flex: {
     paddingHorizontal: 5,
+  },
+  nameStyle: {
+    fontFamily: font.roboto,
+    fontSize: 18,
+  },
+  fontStyle: {
+    fontFamily: font.roboto,
+    fontSize: 14,
+    fontWeight: font.medium,
+  },
+  fontSize: {
+    fontSize: 14,
+  },
+  recentOrders: {
+    fontFamily: font.roboto,
+    fontSize: 18,
+    fontWeight: font.fontBold,
+  },
+  fulfiledSize: {
+    fontSize: 12,
   },
 });
 

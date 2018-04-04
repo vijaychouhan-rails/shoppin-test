@@ -1,5 +1,7 @@
-import { StyleSheet, Platform } from 'react-native';
+import { StyleSheet } from 'react-native';
 import standardFormat from '../../constants/standardFormat';
+import font from '../../constants/font';
+
 
 const BasicStyles = StyleSheet.create({
   marginTop: {
@@ -19,7 +21,21 @@ const BasicStyles = StyleSheet.create({
     marginTop: standardFormat.forgot_password_margin,
   },
   fontType: {
-    fontFamily: Platform.OS === 'ios' && 'San Francisco',
+    fontFamily: font.sairaExtra,
+  },
+  logoStyle: {
+    marginTop: standardFormat.logo_place,
+    alignSelf: 'flex-end',
+  },
+  alignSelf: {
+    alignSelf: 'center',
+  },
+  marginHorizontal: {
+    marginHorizontal: 20,
+  },
+  logo_textplace: {
+    alignSelf: 'flex-end',
+    bottom: standardFormat.logo_textplace,
   },
 });
 

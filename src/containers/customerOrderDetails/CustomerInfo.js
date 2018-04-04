@@ -13,7 +13,7 @@ import CalenderDateThird from '../../components/customerInfo/calender-date-third
 import CommonStyles from '../../assets/CommonStyles';
 import BasicStyles from './BasicStyles';
 import colors from '../../constants/colors';
-
+import { PROFILE_PIC } from '../../constants/images';
 
 class CustomerInfo extends Component {
   constructor(props) {
@@ -62,11 +62,13 @@ class CustomerInfo extends Component {
             <View style={[CommonStyles.directionRow, BasicStyles.marginTop,
               CommonStyles.marginBottom]}
             >
-              <Text style={[CommonStyles.fontColor, CommonStyles.marginTop]}>
+              <Text style={[CommonStyles.fontColor, CommonStyles.marginTop,
+                BasicStyles.fulfiledSize]}
+              >
                 {listItem.item.payment}
               </Text>
               <Text style={[CommonStyles.fontColor, CommonStyles.marginLeft,
-                CommonStyles.marginTop]}
+                BasicStyles.fulfiledSize, CommonStyles.marginTop]}
               >
                 {listItem.item.fulfiled}
               </Text>
@@ -80,7 +82,9 @@ class CustomerInfo extends Component {
 
   render() {
     return (
-      <Container style={[CommonStyles.backgroundColor, BasicStyles.flex]}>
+      <Container style={[CommonStyles.background, BasicStyles.flex,
+        CommonStyles.commonMarginBottom]}
+      >
         <HeaderView title={this.props.data} />
         <ScrollView
           style={[CommonStyles.marginTop, CommonStyles.marginBottom, BasicStyles.flex]}
@@ -90,7 +94,7 @@ class CustomerInfo extends Component {
             CommonStyles.marginBottom, CommonStyles.spaceBetween, CommonStyles.centerContent]}
           >
             <View style={BasicStyles.marginBottom}>
-              <Text style={[CommonStyles.standardFont, CommonStyles.fontBold,
+              <Text style={[BasicStyles.nameStyle, CommonStyles.fontBold,
                 BasicStyles.marginBottom]}
               >
                 {this.props.data}
@@ -98,24 +102,27 @@ class CustomerInfo extends Component {
               <View style={CommonStyles.directionRow}>
                 <Image
                   style={BasicStyles.customer_image}
+                  source={PROFILE_PIC}
                 />
                 <View style={[BasicStyles.marginLeft, CommonStyles.justifyContent]}>
-                  <Text style={CommonStyles.fontColor}>
+                  <Text style={[CommonStyles.fontColor, BasicStyles.fontSize]}>
                     {constantsText.address}
                   </Text>
-                  <Text style={[CommonStyles.fontColor, CommonStyles.marginTop]}>
+                  <Text style={[CommonStyles.fontColor, BasicStyles.fontSize,
+                    CommonStyles.marginTop]}
+                  >
                     {constantsText.month}
                   </Text>
                 </View>
               </View>
             </View>
           </View>
-          <Text style={[CommonStyles.standardFont, BasicStyles.marginTop, CommonStyles.fontBold,
+          <Text style={[BasicStyles.nameStyle, BasicStyles.marginTop, CommonStyles.fontBold,
             BasicStyles.marginBottom]}
           >
             {constantsText.note}
           </Text>
-          <Text style={[CommonStyles.fontStyle, BasicStyles.marginTop]}>
+          <Text style={[BasicStyles.fontStyle, BasicStyles.marginTop]}>
             {constantsText.note_content}
           </Text>
           <View style={[BasicStyles.sliderView, CommonStyles.centerContent]}>
@@ -132,33 +139,42 @@ class CustomerInfo extends Component {
               </Swiper>
             </View>
           </View>
-          <Text style={[CommonStyles.standardFont, BasicStyles.marginTop, CommonStyles.fontBold,
+          <Text style={[BasicStyles.recentOrders, BasicStyles.marginTop, CommonStyles.fontBold,
             BasicStyles.marginBottom]}
           >
             {constantsText.recenOrders}
           </Text>
           {this.showList()}
-          <Text style={[CommonStyles.standardFont, CommonStyles.fontBold, CommonStyles.marginTop]}>
-            {constantsText.contact}
-          </Text>
-          <Text style={[CommonStyles.fontColor, CommonStyles.marginTop]}>
-            {constantsText.email}
-          </Text>
-          <Text style={[CommonStyles.fontStyle, CommonStyles.fontBold]}>
-            {constantsText.emailID}
-          </Text>
-          <Text style={[CommonStyles.fontColor, BasicStyles.extraMarginTop]}>
-            {constantsText.address}
-          </Text>
-          <Text style={[CommonStyles.fontStyle, CommonStyles.fontBold]}>
-            {constantsText.address1}
-          </Text>
-          <Text style={[CommonStyles.fontStyle, CommonStyles.fontBold]}>
-            {constantsText.address2}
-          </Text>
-          <Text style={[CommonStyles.fontStyle, CommonStyles.fontBold]}>
-            {constantsText.address3}
-          </Text>
+          <View style={[CommonStyles.border, CommonStyles.paddingBottom]}>
+            <Text style={[BasicStyles.nameStyle, CommonStyles.fontBold,
+              CommonStyles.marginTop]}
+            >
+              {constantsText.contact}
+            </Text>
+            <Text style={[CommonStyles.fontColor, CommonStyles.marginTop,
+              BasicStyles.fulfiledSize]}
+            >
+              {constantsText.email}
+            </Text>
+            <Text style={[CommonStyles.fontStyle, CommonStyles.fontBold]}>
+              {constantsText.emailID}
+            </Text>
+            <Text style={[CommonStyles.fontColor, BasicStyles.fulfiledSize,
+              BasicStyles.extraMarginTop]}
+            >
+              {constantsText.Address}
+            </Text>
+            <Text style={[CommonStyles.fontStyle, CommonStyles.fontBold]}>
+              {constantsText.address1}
+            </Text>
+            <Text style={[CommonStyles.fontStyle, CommonStyles.fontBold]}>
+              {constantsText.address2}
+            </Text>
+            <Text style={[CommonStyles.fontStyle, CommonStyles.fontBold]}>
+              {constantsText.address3}
+            </Text>
+          </View>
+
         </ScrollView>
       </Container>
     );

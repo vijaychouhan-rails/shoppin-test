@@ -5,6 +5,7 @@ import { Actions } from 'react-native-router-flux';
 import PropTypes from 'prop-types';
 import BasicStyles from './BasicStyles';
 import CommonStyles from '../../assets/CommonStyles';
+import { BUTTER } from '../../constants/images';
 
 const CollectionList = props => (
   <FlatList
@@ -17,17 +18,18 @@ const CollectionList = props => (
       >
         <View style={[CommonStyles.directionRow, CommonStyles.centerContent, CommonStyles.flex]}>
           <Image
+            source={BUTTER}
             style={CommonStyles.imageStyle}
           />
           <View style={[CommonStyles.directionRow, CommonStyles.border, CommonStyles.flex,
             CommonStyles.spaceBetween, BasicStyles.paddingVertical]}
           >
             <View>
-              <Text style={[BasicStyles.textStyle, CommonStyles.fontStyle]}>
+              <Text style={BasicStyles.textStyle}>
                 {listItem.item.product_name}
               </Text>
               <View style={[CommonStyles.directionRow, BasicStyles.marginTop]}>
-                <Text style={[BasicStyles.margin, CommonStyles.fontColor]}>
+                <Text style={[BasicStyles.margin, CommonStyles.fontColor, BasicStyles.fontSize]}>
                   {listItem.item.no_of_products}
                 </Text>
                 <Text style={[BasicStyles.margin, CommonStyles.fontColor]}>

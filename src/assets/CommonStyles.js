@@ -15,12 +15,16 @@ const CommonStyles = StyleSheet.create({
     },
     shadowOpacity: 0,
     shadowColor: 'transparent',
+    borderColor: colors.greyColor,
+    borderBottomWidth: 1,
+    borderTopWidth: 1,
   },
   inputText: {
     color: colors.black,
+    fontFamily: font.roboto,
     width: standardFormat.inputWidth,
     fontSize: font.searchFont,
-    fontWeight: font.fontBold,
+    fontWeight: standardFormat.regular,
     borderBottomWidth: 1,
     borderColor: colors.pureGray,
     paddingLeft: 5,
@@ -31,7 +35,7 @@ const CommonStyles = StyleSheet.create({
     marginVertical: standardFormat.marginVertical,
   },
   background: {
-    flex: 1,
+    height: standardFormat.background_height,
     alignItems: 'center',
     backgroundColor: colors.white,
   },
@@ -40,6 +44,7 @@ const CommonStyles = StyleSheet.create({
     fontSize: font.searchFont,
     fontWeight: font.fontBold,
     textAlign: 'center',
+    fontFamily: font.roboto,
   },
   buttonStyles: {
     marginTop: standardFormat.marginVertical,
@@ -55,13 +60,12 @@ const CommonStyles = StyleSheet.create({
   HeadingText: {
     marginTop: standardFormat.headerMarginTop,
     fontSize: font.headingSize,
-    fontWeight: font.fontBold,
-    color: colors.black,
   },
   search: {
     flex: 1,
     fontSize: font.searchFont,
     color: colors.black,
+    fontFamily: font.roboto,
     marginTop: 3,
   },
   searchView: {
@@ -83,6 +87,7 @@ const CommonStyles = StyleSheet.create({
   },
   fontStyle: {
     color: colors.black,
+    fontFamily: font.roboto,
     fontSize: font.fontSize,
   },
   rightIcon: {
@@ -108,7 +113,8 @@ const CommonStyles = StyleSheet.create({
     width: 100,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colors.lightGrey,
+    borderColor: colors.lightGrey,
+    borderWidth: 1,
   },
   fontBold: {
     fontWeight: font.fontBold,
@@ -121,6 +127,7 @@ const CommonStyles = StyleSheet.create({
   },
   fontColor: {
     color: colors.gray,
+    fontFamily: font.roboto,
   },
   marginLeft: {
     marginLeft: 30,
@@ -129,7 +136,8 @@ const CommonStyles = StyleSheet.create({
     justifyContent: 'center',
   },
   standardFont: {
-    fontSize: font.searchFont,
+    fontSize: 16,
+    fontFamily: font.roboto,
     color: colors.black,
   },
   backgroundColor: {
@@ -146,17 +154,19 @@ const CommonStyles = StyleSheet.create({
     marginTop: 3,
   },
   nameStyle: {
-    fontSize: font.subHeading,
+    fontSize: font.searchFont,
     fontWeight: font.fontBold,
+    fontFamily: font.roboto,
     color: colors.black,
   },
   marginBottom: {
     marginBottom: 10,
   },
   RSText: {
-    fontSize: font.headingSize,
+    fontSize: font.rsTextSize,
     fontWeight: font.fontBold,
     color: colors.black,
+    fontFamily: font.sairaExtra,
   },
   imageSlider: {
     flex: 1,
@@ -166,6 +176,8 @@ const CommonStyles = StyleSheet.create({
     paddingLeft: 10,
   },
   forgotPassword: {
+    fontFamily: font.roboto,
+    fontWeight: standardFormat.medium,
     marginTop: standardFormat.marginVertical,
     width: width / 1.2,
   },
@@ -175,6 +187,21 @@ const CommonStyles = StyleSheet.create({
   },
   flex: {
     flex: 1,
+  },
+  commonMarginBottom: {
+    paddingBottom: 50,
+  },
+  paddingBottom: {
+    paddingBottom: 20,
+  },
+  rsStyle: {
+    fontFamily: font.roboto,
+    fontSize: font.rsFontSize,
+    fontWeight: font.fontBold,
+  },
+  fulfiled: {
+    fontFamily: font.roboto,
+    fontSize: 12,
   },
 });
 

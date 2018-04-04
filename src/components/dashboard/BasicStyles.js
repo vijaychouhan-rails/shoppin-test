@@ -8,7 +8,6 @@ const BasicStyles = StyleSheet.create({
     marginTop: 10,
     height: standardFormat.orderImageWidth,
     width: standardFormat.orderImageWidth,
-    backgroundColor: colors.imageGrayColor,
     borderWidth: 1,
     borderColor: colors.darkGray,
   },
@@ -19,6 +18,8 @@ const BasicStyles = StyleSheet.create({
   fontStyle: {
     fontSize: font.searchFont,
     color: colors.darkGray,
+    fontFamily: font.roboto,
+    fontWeight: font.medium,
   },
 });
 

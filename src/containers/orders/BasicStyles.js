@@ -4,8 +4,9 @@ import colors from '../../constants/colors';
 
 const BasicStyles = StyleSheet.create({
   textStyle: {
-    fontSize: 13,
-    fontWeight: font.fontBold,
+    fontSize: 14,
+    fontFamily: font.roboto,
+    fontWeight: font.medium,
   },
   marginTop: {
     marginTop: 10,

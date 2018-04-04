@@ -1,7 +1,7 @@
 const colors = {
   greyColor: '#c2c2c2',
   pureGray: '#C0C0C0',
-  skyBlue: '#1e90ff',
+  skyBlue: '#0D81FE',
   white: '#fff',
   black: '#000',
   lightGrey: '#F2F2F2',

@@ -11,7 +11,8 @@ const BasicStyles = StyleSheet.create({
   },
   textStyle: {
     marginLeft: 10,
-    fontSize: font.searchFont,
+    fontSize: font.rsFontSize,
+    fontFamily: font.roboto,
     fontWeight: font.fontBold,
   },
   icon: {

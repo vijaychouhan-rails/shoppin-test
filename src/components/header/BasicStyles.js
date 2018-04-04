@@ -13,6 +13,7 @@ const BasicStyles = StyleSheet.create({
   HeadingText: {
     fontSize: font.subHeading,
     color: colors.black,
+    fontFamily: font.sairaExtra,
   },
   iconStyle: {
     color: colors.black,

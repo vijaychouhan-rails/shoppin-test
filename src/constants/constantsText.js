@@ -56,5 +56,8 @@ const constantsText = {
   today: 'Today',
   yesterday: 'Yesterday',
   this_week: 'This Week',
+  version: 'v0.0.1-001',
+  sub_total_amt: 'US$186.40',
+  Address: 'Address',
 };
 export default constantsText;

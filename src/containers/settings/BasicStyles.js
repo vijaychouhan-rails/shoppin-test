@@ -10,7 +10,8 @@ const BasicStyles = StyleSheet.create({
     marginHorizontal: 10,
   },
   listedText: {
-    fontSize: font.searchFont,
+    fontSize: font.rsFontSize,
+    fontFamily: font.roboto,
     color: colors.black,
   },
   paddingVertical: {
