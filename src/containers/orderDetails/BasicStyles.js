@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 import colors from '../../constants/colors';
 import font from '../../constants/font';
+import standardFormat from '../../constants/standardFormat';
 
 const BasicStyles = StyleSheet.create({
   customer_image: {
@@ -23,13 +24,13 @@ const BasicStyles = StyleSheet.create({
   },
   view_border_style: {
     borderTopWidth: 0.5,
-    borderColor: colors.greyColor,
+    borderColor: colors.lightGrey,
   },
   circleIcon: {
-    width: 40,
-    height: 40,
+    width: standardFormat.circle_image,
+    height: standardFormat.circle_image,
     borderWidth: 1,
-    borderRadius: 20,
+    borderRadius: standardFormat.circle_image_radius,
     borderColor: colors.greyColor,
     justifyContent: 'center',
     alignItems: 'center',
@@ -48,17 +49,22 @@ const BasicStyles = StyleSheet.create({
   },
   nameStyle: {
     fontFamily: font.roboto,
-    fontSize: 18,
+    fontSize: font.rsFontSize,
   },
   fontStyle: {
     fontFamily: font.roboto,
-    fontSize: 14,
+    fontSize: font.fontSize,
     fontWeight: font.medium,
   },
   circleIconText: {
     fontFamily: font.roboto,
-    fontSize: 16,
+    fontSize: font.searchFont,
     fontWeight: font.medium,
+  },
+  border_style: {
+    borderBottomWidth: 1,
+    borderTopWidth: 1,
+    borderColor: colors.lightGrey,
   },
 });
 

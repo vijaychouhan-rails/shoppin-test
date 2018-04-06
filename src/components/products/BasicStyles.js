@@ -11,7 +11,7 @@ const BasicStyles = StyleSheet.create({
   },
   textStyle: {
     marginLeft: 10,
-    fontSize: font.rsFontSize,
+    fontSize: font.searchFont,
     fontFamily: font.roboto,
     fontWeight: font.fontBold,
   },
@@ -29,6 +29,8 @@ const BasicStyles = StyleSheet.create({
   },
   margin: {
     margin: standardFormat.listMargin,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container } from 'native-base';
-import { View, Text, ScrollView, Image, TextInput, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, Image, TextInput, FlatList, TouchableOpacity, Dimensions } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
@@ -9,7 +9,9 @@ import CommonStyles from '../../assets/CommonStyles';
 import HeaderView from '../../components/header/header';
 import BasicStyles from './BasicStyles';
 import constantsText from '../../constants/constantsText';
-import { PROFILE_PIC } from '../../constants/images';
+import { PROFILE_PIC, BUTTER } from '../../constants/images';
+
+const { height } = Dimensions.get('window');
 
 class OrderDetails extends Component {
   constructor(props) {
@@ -29,26 +31,32 @@ class OrderDetails extends Component {
           >
             <View style={[CommonStyles.directionRow, CommonStyles.centerContent]}>
               <Image
+                source={BUTTER}
                 style={CommonStyles.imageStyle}
               />
               <View style={[CommonStyles.directionRow, CommonStyles.centerContent,
-                BasicStyles.paddingVertical, CommonStyles.border, CommonStyles.spaceBetween,
-                CommonStyles.flex]}
+                CommonStyles.height, BasicStyles.paddingVertical, CommonStyles.border,
+                CommonStyles.spaceBetween, CommonStyles.flex]}
               >
-                <View style={[BasicStyles.marginTop, BasicStyles.marginLeft]}>
-                  <Text style={CommonStyles.fontStyle}>
+                <View style={[BasicStyles.marginTop, BasicStyles.marginLeft,
+                  CommonStyles.spaceBetween]}
+                >
+                  <Text style={[CommonStyles.fontStyle, CommonStyles.fontBold]}>
                     {listItem.item.title}
                   </Text>
-                  <Text style={[BasicStyles.margin, CommonStyles.fontStyle]}>
+                  <Text style={[BasicStyles.margin, CommonStyles.fontStyle, CommonStyles.fontBold]}>
                     Size: {listItem.item.size}
                   </Text>
-                  <Text style={[BasicStyles.margin, CommonStyles.fontColor,
+                  <Text style={[BasicStyles.margin, CommonStyles.fontColor, CommonStyles.fontBold,
                     CommonStyles.standardFontSize]}
                   >
                     {listItem.item.price}
                   </Text>
                 </View>
-                <TouchableOpacity style={BasicStyles.circleIcon}>
+                <TouchableOpacity
+                  activeOpacity={1}
+                  style={BasicStyles.circleIcon}
+                >
                   <Text style={BasicStyles.circleIconText}>2</Text>
                 </TouchableOpacity>
               </View>
@@ -64,7 +72,7 @@ class OrderDetails extends Component {
     const { params } = this.props.navigation.state;
     return (
       <Container style={[CommonStyles.background, CommonStyles.commonMarginBottom]}>
-        <HeaderView title={params.hash} />
+        <HeaderView title={params.hash} showBar />
         <ScrollView style={CommonStyles.marginBoth} showsVerticalScrollIndicator={false}>
           <View style={[CommonStyles.flexStyle, BasicStyles.marginTop]}>
             <Text style={[CommonStyles.standardFont, CommonStyles.fontBold]}>
@@ -86,7 +94,8 @@ class OrderDetails extends Component {
             </Text>
           </View>
           <TouchableOpacity
-            style={[CommonStyles.border_style, BasicStyles.marginTop]}
+            activeOpacity={1}
+            style={[BasicStyles.border_style, BasicStyles.marginTop]}
             onPress={() => Actions.customer_details(params.name)}
           >
             <Text style={[BasicStyles.marginTop, BasicStyles.nameStyle, CommonStyles.fontBold]}>
@@ -115,7 +124,7 @@ class OrderDetails extends Component {
                 <Icon
                   name="angle-right"
                   style={CommonStyles.rightIcon}
-                  size={30}
+                  size={height / 30}
                 />
               </TouchableOpacity>
             </View>
@@ -152,7 +161,7 @@ class OrderDetails extends Component {
           <View style={[CommonStyles.directionRow,
             CommonStyles.marginTop, CommonStyles.spaceBetween]}
           >
-            <Text style={[BasicStyles.nameStyle, BasicStyles.marginTop]}>
+            <Text style={[BasicStyles.nameStyle, BasicStyles.marginTop, CommonStyles.fontBold]}>
               {constantsText.title}
             </Text>
             <Text style={[CommonStyles.fulfiled, BasicStyles.sub_margin_top]}>

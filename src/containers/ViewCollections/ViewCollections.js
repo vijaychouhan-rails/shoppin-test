@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, TextInput } from 'react-native';
+import { View, TextInput, Dimensions } from 'react-native';
 import { Container, Content } from 'native-base';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -11,6 +11,7 @@ import CommonStyles from '../../assets/CommonStyles';
 import ViewCollectionsList from '../../components/viewCollectionsList/view-collections-list';
 import colors from '../../constants/colors';
 
+const { height } = Dimensions.get('window');
 
 class ViewCollections extends Component {
   constructor(props) {
@@ -32,7 +33,7 @@ class ViewCollections extends Component {
             <Icon
               name="search"
               style={CommonStyles.searchIcon}
-              size={16}
+              size={height / 50}
             />
             <TextInput
               style={CommonStyles.search}
@@ -42,7 +43,7 @@ class ViewCollections extends Component {
             <Icon
               name="microphone"
               style={CommonStyles.microphone}
-              size={20}
+              size={height / 40}
             />
           </View>
           <ViewCollectionsList view_collection_list={this.props.view_collection_list} />

@@ -8,12 +8,12 @@ const BasicStyles = StyleSheet.create({
     alignItems: 'center',
   },
   RSText: {
-    fontFamily: font.sairaExtra,
-    fontSize: 36,
+    fontFamily: font.SairaCondensedExtraBold,
+    fontSize: font.rsTextSize,
     fontWeight: font.fontBold,
   },
   fontSize: {
-    fontSize: 12,
+    fontSize: font.standardFontSize,
   },
 });
 

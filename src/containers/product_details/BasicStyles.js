@@ -39,17 +39,26 @@ const BasicStyles = StyleSheet.create({
   backgroundColor3: {
     backgroundColor: colors.screen3,
   },
-  text: {
-    color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold',
-  },
   imageSlider: {
     margin: standardFormat.image_slider_padding,
   },
   slideImage: {
-    height: 150,
-    width: 200,
+    flex: 1,
+  },
+  marginTopText: {
+    marginTop: 20,
+  },
+  centerContent: {
+    justifyContent: 'center',
+  },
+  marginRight: {
+    marginRight: 10,
+  },
+  border_style: {
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    borderColor: colors.lightGrey,
+    marginTop: 10,
   },
 });
 

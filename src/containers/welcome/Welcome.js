@@ -15,7 +15,7 @@ class Welcome extends Component {
   }
   render() {
     return (
-      <Container style={CommonStyles.backgroundColor}>
+      <Container style={BasicStyles.background}>
         <Text
           style={[CommonStyles.HeadingText, BasicStyles.titleMargin, BasicStyles.fontType,
             BasicStyles.alignSelf]}
@@ -29,13 +29,13 @@ class Welcome extends Component {
           placeholderTextColor={colors.pureGray}
         />
         <TextInput
-          style={[CommonStyles.inputText, BasicStyles.marginBoth, BasicStyles.alignSelf]}
+          style={[CommonStyles.inputText, CommonStyles.marginBoth, BasicStyles.alignSelf]}
           underlineColorAndroid="transparent"
           placeholder={constantsText.email}
           placeholderTextColor={colors.pureGray}
         />
         <TextInput
-          style={[CommonStyles.inputText, BasicStyles.marginBoth, BasicStyles.alignSelf]}
+          style={[CommonStyles.inputText, CommonStyles.marginBoth, BasicStyles.alignSelf]}
           underlineColorAndroid="transparent"
           placeholder={constantsText.password}
           placeholderTextColor={colors.pureGray}
@@ -52,6 +52,7 @@ class Welcome extends Component {
           </Text>
         </Button>
         <TouchableOpacity
+          activeOpacity={0.4}
           onPress={Actions.forgotPassword}
         >
           <Text
@@ -62,7 +63,7 @@ class Welcome extends Component {
           </Text>
         </TouchableOpacity>
         <Image style={[BasicStyles.logoStyle, BasicStyles.marginHorizontal]} source={HOME_LOGO} />
-        <Text style={[BasicStyles.marginHorizontal,
+        <Text style={[BasicStyles.marginHorizontal, BasicStyles.fontSize,
           BasicStyles.logo_textplace, CommonStyles.fontColor]}
         >
           {constantsText.version}

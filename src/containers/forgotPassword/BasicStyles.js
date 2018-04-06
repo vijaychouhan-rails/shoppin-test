@@ -12,6 +12,7 @@ const BasicStyles = StyleSheet.create({
   },
   marginTop: {
     marginTop: standardFormat.marginTop,
+    height: standardFormat.button_height,
     marginHorizontal: standardFormat.marginLeft,
   },
 });

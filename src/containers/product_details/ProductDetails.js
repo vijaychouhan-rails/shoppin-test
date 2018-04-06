@@ -10,7 +10,7 @@ import FooterView from '../../components/footer/footer';
 import BasicStyles from './BasicStyles';
 import colors from '../../constants/colors';
 import CommonStyles from '../../assets/CommonStyles';
-import { PRODUCT1, PRODUCT2, PRODUCT3, PRODUCT4, T_SHIRT } from '../../constants/images';
+import { PRODUCT1, PRODUCT2, PRODUCT3, PRODUCT4, BUTTER } from '../../constants/images';
 
 class ProductDetails extends Component {
   constructor(props) {
@@ -31,10 +31,12 @@ class ProductDetails extends Component {
           >
             <View style={[CommonStyles.directionRow, CommonStyles.centerContent]}>
               <Image
-                source={T_SHIRT}
+                source={BUTTER}
                 style={CommonStyles.imageStyle}
               />
-              <View style={BasicStyles.marginTop}>
+              <View style={[CommonStyles.border, CommonStyles.height, BasicStyles.centerContent,
+                CommonStyles.flex, BasicStyles.marginRight]}
+              >
                 <Text style={[BasicStyles.textStyle, BasicStyles.fontSize, CommonStyles.fontStyle]}>
                   {listItem.item.size}
                 </Text>
@@ -51,6 +53,7 @@ class ProductDetails extends Component {
             </View>
           </View>
         )}
+        showsVerticalScrollIndicator={false}
         keyExtractor={(item, index) => index.toString()}
       />
     );
@@ -62,11 +65,12 @@ class ProductDetails extends Component {
       <Container
         style={CommonStyles.backgroundColor}
       >
-        <HeaderView title={this.props.data} />
+        <HeaderView title={this.props.data} showBar />
         <View style={[CommonStyles.imageSlider, BasicStyles.imageSlider]}>
           <Swiper
             showsButtons={false}
             activeDotColor={colors.black}
+            paginationStyle={{ bottom: -20 }}
           >
             <View style={BasicStyles.slide}>
               <Image
@@ -94,14 +98,19 @@ class ProductDetails extends Component {
             </View>
           </Swiper>
         </View>
-        <Text style={[BasicStyles.textStyle, BasicStyles.fontSizeHeading]}>
+        <Text style={[BasicStyles.textStyle, BasicStyles.fontSizeHeading,
+          BasicStyles.marginTopText]}
+        >
           {this.props.data}
         </Text>
-        <Text style={[BasicStyles.textStyle, CommonStyles.border_style,
-          BasicStyles.fontSizeHeading, BasicStyles.paddingBoth]}
-        >
-          {constantsText.title_of_list}
-        </Text>
+        <View style={[BasicStyles.border_style, BasicStyles.margin, BasicStyles.marginRight]}>
+          <Text style={[BasicStyles.textStyle,
+            BasicStyles.fontSizeHeading, BasicStyles.paddingBoth]}
+          >
+            {constantsText.title_of_list}
+          </Text>
+        </View>
+
         {this.showList()}
         <FooterView products={this.state.isShow} />
       </Container>

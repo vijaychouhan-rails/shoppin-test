@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView, Image, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, Image, FlatList, TouchableOpacity, Dimensions } from 'react-native';
 import { Container } from 'native-base';
 import { connect } from 'react-redux';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -15,6 +15,8 @@ import BasicStyles from './BasicStyles';
 import colors from '../../constants/colors';
 import { PROFILE_PIC } from '../../constants/images';
 
+const { height } = Dimensions.get('window');
+
 class CustomerInfo extends Component {
   constructor(props) {
     super(props);
@@ -28,8 +30,9 @@ class CustomerInfo extends Component {
       <FlatList
         data={orders}
         renderItem={listItem => (
-          <TouchableOpacity style={[CommonStyles.listView, BasicStyles.marginTop,
-            CommonStyles.border]}
+          <TouchableOpacity
+            activeOpacity={1}
+            style={[BasicStyles.marginTop, CommonStyles.border]}
           >
             <View style={[CommonStyles.directionRow, CommonStyles.spaceBetween]}>
               <View>
@@ -38,11 +41,11 @@ class CustomerInfo extends Component {
                   {listItem.item.hash}
                 </Text>
               </View>
-              <TouchableOpacity>
+              <TouchableOpacity activeOpacity={1} >
                 <Icon
                   name="angle-right"
                   style={CommonStyles.rightIcon}
-                  size={30}
+                  size={height / 30}
                 />
               </TouchableOpacity>
             </View>
@@ -85,12 +88,12 @@ class CustomerInfo extends Component {
       <Container style={[CommonStyles.background, BasicStyles.flex,
         CommonStyles.commonMarginBottom]}
       >
-        <HeaderView title={this.props.data} />
+        <HeaderView title={this.props.data} showBar />
         <ScrollView
           style={[CommonStyles.marginTop, CommonStyles.marginBottom, BasicStyles.flex]}
           showsVerticalScrollIndicator={false}
         >
-          <View style={[CommonStyles.directionRow, BasicStyles.marginTop, BasicStyles.border_style,
+          <View style={[CommonStyles.directionRow, BasicStyles.marginTop, CommonStyles.border,
             CommonStyles.marginBottom, CommonStyles.spaceBetween, CommonStyles.centerContent]}
           >
             <View style={BasicStyles.marginBottom}>
@@ -125,13 +128,16 @@ class CustomerInfo extends Component {
           <Text style={[BasicStyles.fontStyle, BasicStyles.marginTop]}>
             {constantsText.note_content}
           </Text>
-          <View style={[BasicStyles.sliderView, CommonStyles.centerContent]}>
-            <View style={[CommonStyles.imageSlider, BasicStyles.imageSlider]}>
+          <View style={[BasicStyles.border_style, BasicStyles.extraMarginTop]}>
+            <View style={[BasicStyles.sliderView, CommonStyles.centerContent,
+              BasicStyles.imageSlider, BasicStyles.extraMarginTop]}
+            >
               <Swiper
                 showsButtons={false}
                 activeDotColor={colors.black}
                 showsPagination
                 scrollEnabled
+                paginationStyle={{ bottom: -20 }}
               >
                 <CalenderDateFirst />
                 <CalenderDateSecond />
@@ -139,12 +145,15 @@ class CustomerInfo extends Component {
               </Swiper>
             </View>
           </View>
-          <Text style={[BasicStyles.recentOrders, BasicStyles.marginTop, CommonStyles.fontBold,
-            BasicStyles.marginBottom]}
+
+          <Text style={[BasicStyles.recentOrders, BasicStyles.extraMarginTop,
+            CommonStyles.fontBold, BasicStyles.marginBottom]}
           >
             {constantsText.recenOrders}
           </Text>
-          {this.showList()}
+          <View style={BasicStyles.alignItems}>
+            {this.showList()}
+          </View>
           <View style={[CommonStyles.border, CommonStyles.paddingBottom]}>
             <Text style={[BasicStyles.nameStyle, CommonStyles.fontBold,
               CommonStyles.marginTop]}

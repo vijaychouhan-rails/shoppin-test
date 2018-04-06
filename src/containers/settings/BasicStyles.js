@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 import colors from '../../constants/colors';
 import font from '../../constants/font';
+import standardFormat from '../../constants/standardFormat';
 
 const BasicStyles = StyleSheet.create({
   marginTop: {

@@ -6,11 +6,13 @@ import {
   Body,
 } from 'native-base';
 import PropTypes from 'prop-types';
-import { TouchableOpacity, Text } from 'react-native';
+import { TouchableOpacity, Text, Dimensions } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import BasicStyles from './BasicStyles';
 import CommonStyles from '../../assets/CommonStyles';
+
+const { height } = Dimensions.get('window');
 
 const HeaderView = props => (
   <Header
@@ -20,12 +22,13 @@ const HeaderView = props => (
       style={BasicStyles.flexStyle}
     >
       <TouchableOpacity
+        activeOpacity={1}
         onPress={() => Actions.pop()}
       >
         <Icon
           style={BasicStyles.iconStyle}
           name="angle-left"
-          size={30}
+          size={height / 25}
         />
       </TouchableOpacity>
     </Left>
@@ -38,12 +41,31 @@ const HeaderView = props => (
     </Body>
     <Right
       style={BasicStyles.flexStyle}
-    />
+    >
+      {props.showBar &&
+      <TouchableOpacity
+        activeOpacity={1}
+        // onPress={() => Actions.pop()}
+      >
+        <Icon
+          style={BasicStyles.iconStyle}
+          name="bars"
+          size={height / 30}
+        />
+      </TouchableOpacity>}
+    </Right>
+
   </Header>
 );
 
 HeaderView.propTypes = {
   title: PropTypes.string.isRequired,
+  showBar: PropTypes.bool,
 };
+
+HeaderView.defaultProps = {
+  showBar: null,
+};
+
 
 export default HeaderView;

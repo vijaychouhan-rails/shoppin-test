@@ -31,6 +31,7 @@ class DashBoard extends Component {
           tabBarBackgroundColor={colors.white}
           tabBarActiveTextColor={colors.white}
           tabBarInactiveTextColor={colors.bluecolor}
+          tabBarTextStyle={BasicStyles.tabBarTextStyle}
           tabBarUnderlineStyle={BasicStyles.underLineColor}
           renderTabBar={() => <DefaultTabBar />}
         >

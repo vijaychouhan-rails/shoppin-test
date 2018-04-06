@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, TextInput, FlatList, Text, TouchableOpacity } from 'react-native';
+import { View, TextInput, FlatList, Text, TouchableOpacity, Dimensions } from 'react-native';
 import { Container, Content } from 'native-base';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -12,6 +12,7 @@ import CommonStyles from '../../assets/CommonStyles';
 import BasicStyles from './BasicStyles';
 import colors from '../../constants/colors';
 
+const { height } = Dimensions.get('window');
 
 class Orders extends Component {
   constructor(props) {
@@ -28,6 +29,7 @@ class Orders extends Component {
         data={orders}
         renderItem={listItem => (
           <TouchableOpacity
+            activeOpacity={1}
             style={[CommonStyles.listView, CommonStyles.marginTop,
               CommonStyles.border]}
             onPress={() => Actions.order_details(listItem.item)}
@@ -39,11 +41,14 @@ class Orders extends Component {
                   {listItem.item.hash}
                 </Text>
               </View>
-              <TouchableOpacity onPress={() => Actions.order_details(listItem.item)}>
+              <TouchableOpacity
+                activeOpacity={1}
+                onPress={() => Actions.order_details(listItem.item)}
+              >
                 <Icon
                   name="angle-right"
                   style={CommonStyles.rightIcon}
-                  size={30}
+                  size={height / 30}
                 />
               </TouchableOpacity>
 
@@ -75,6 +80,7 @@ class Orders extends Component {
             </View>
           </TouchableOpacity>
         )}
+        showsVerticalScrollIndicator={false}
         keyExtractor={(item, index) => index.toString()}
       />
     );
@@ -93,7 +99,7 @@ class Orders extends Component {
             <Icon
               name="search"
               style={CommonStyles.searchIcon}
-              size={16}
+              size={height / 50}
             />
             <TextInput
               style={[CommonStyles.search, BasicStyles.searchMargin]}

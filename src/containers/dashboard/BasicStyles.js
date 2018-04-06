@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import colors from '../../constants/colors';
+import font from '../../constants/font';
 
 const BasicStyles = StyleSheet.create({
   container: {
@@ -12,6 +13,9 @@ const BasicStyles = StyleSheet.create({
   },
   tab: {
     marginTop: 20,
+  },
+  tabBarTextStyle: {
+    fontSize: font.searchFont,
   },
 });
 

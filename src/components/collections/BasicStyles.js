@@ -28,7 +28,10 @@ const BasicStyles = StyleSheet.create({
     paddingVertical: 27,
   },
   fontSize: {
-    fontSize: 12,
+    fontSize: font.standardFontSize,
+  },
+  centerContent: {
+    justifyContent: 'center',
   },
 });
 

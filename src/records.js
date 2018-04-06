@@ -5,7 +5,7 @@ const initialState = Immutable.fromJS({
     {
       date: '12 February',
       hash: '#0100',
-      name: 'Johne Doe',
+      name: 'John Doe',
       rs: 'US$13.00',
       payment: 'Paid',
       fulfiled: 'Fulfiled',
@@ -14,7 +14,7 @@ const initialState = Immutable.fromJS({
     {
       date: '13 February',
       hash: '#0100',
-      name: 'Johne Doe',
+      name: 'John Doe',
       rs: 'US$13.00',
       payment: 'Paid',
       fulfiled: 'Fulfiled',
@@ -23,7 +23,7 @@ const initialState = Immutable.fromJS({
     {
       date: '14 February',
       hash: '#0100',
-      name: 'Johne Doe',
+      name: 'John Doe',
       rs: 'US$13.00',
       payment: 'Paid',
       fulfiled: 'Fulfiled',
@@ -32,7 +32,7 @@ const initialState = Immutable.fromJS({
     {
       date: '15 February',
       hash: '#0100',
-      name: 'Johne Doe',
+      name: 'John Doe',
       rs: 'US$13.00',
       payment: 'Paid',
       fulfiled: 'Fulfiled',

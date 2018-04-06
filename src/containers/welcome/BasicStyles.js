@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 import standardFormat from '../../constants/standardFormat';
 import font from '../../constants/font';
+import colors from '../../constants/colors';
 
 
 const BasicStyles = StyleSheet.create({
@@ -8,6 +9,7 @@ const BasicStyles = StyleSheet.create({
     marginTop: standardFormat.inputMarginTop,
   },
   buttomMarginTop: {
+    height: standardFormat.button_height,
     marginTop: standardFormat.buttomMarginTop,
   },
   titleMargin: {
@@ -24,6 +26,8 @@ const BasicStyles = StyleSheet.create({
     fontFamily: font.sairaExtra,
   },
   logoStyle: {
+    height: standardFormat.logo_size,
+    width: standardFormat.logo_size,
     marginTop: standardFormat.logo_place,
     alignSelf: 'flex-end',
   },
@@ -36,6 +40,13 @@ const BasicStyles = StyleSheet.create({
   logo_textplace: {
     alignSelf: 'flex-end',
     bottom: standardFormat.logo_textplace,
+  },
+  fontSize: {
+    fontSize: font.logo_font_size,
+  },
+  background: {
+    backgroundColor: colors.white,
+    // paddingHorizontal: standardFormat.marginLeft,
   },
 });
 

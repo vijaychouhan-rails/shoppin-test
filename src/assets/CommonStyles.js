@@ -8,6 +8,7 @@ const { width } = Dimensions.get('window');
 const CommonStyles = StyleSheet.create({
   header_footer: {
     width,
+    height: standardFormat.header_footer_size,
     backgroundColor: colors.white,
     shadowOffset:
     {
@@ -15,7 +16,7 @@ const CommonStyles = StyleSheet.create({
     },
     shadowOpacity: 0,
     shadowColor: 'transparent',
-    borderColor: colors.greyColor,
+    borderColor: colors.lightGrey,
     borderBottomWidth: 1,
     borderTopWidth: 1,
   },
@@ -72,16 +73,18 @@ const CommonStyles = StyleSheet.create({
     width: standardFormat.searchWidth,
     flexDirection: 'row',
     borderRadius: 10,
-    padding: 10,
+    padding: standardFormat.padding_search_view,
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: colors.lightGrey,
     marginVertical: standardFormat.marginVertical,
   },
   searchIcon: {
     color: colors.pureGray,
-    marginTop: 3,
     marginRight: 5,
   },
   microphone: {
+    marginTop: standardFormat.search_icon_top_margin,
     color: colors.darkGray,
     justifyContent: 'flex-end',
   },
@@ -109,8 +112,8 @@ const CommonStyles = StyleSheet.create({
     alignItems: 'center',
   },
   imageStyle: {
-    height: 100,
-    width: 100,
+    height: 90,
+    width: 90,
     alignItems: 'center',
     justifyContent: 'center',
     borderColor: colors.lightGrey,
@@ -136,7 +139,7 @@ const CommonStyles = StyleSheet.create({
     justifyContent: 'center',
   },
   standardFont: {
-    fontSize: 16,
+    fontSize: font.searchFont,
     fontFamily: font.roboto,
     color: colors.black,
   },
@@ -145,7 +148,7 @@ const CommonStyles = StyleSheet.create({
   },
   border_style: {
     borderBottomWidth: 1,
-    borderColor: colors.greyColor,
+    borderColor: colors.lightGrey,
   },
   listView: {
     width: standardFormat.searchWidth,
@@ -166,7 +169,7 @@ const CommonStyles = StyleSheet.create({
     fontSize: font.rsTextSize,
     fontWeight: font.fontBold,
     color: colors.black,
-    fontFamily: font.sairaExtra,
+    fontFamily: font.SairaCondensedExtraBold,
   },
   imageSlider: {
     flex: 1,
@@ -183,7 +186,7 @@ const CommonStyles = StyleSheet.create({
   },
   border: {
     borderBottomWidth: 1,
-    borderColor: colors.imageGrayColor,
+    borderColor: colors.lightGrey,
   },
   flex: {
     flex: 1,
@@ -201,7 +204,13 @@ const CommonStyles = StyleSheet.create({
   },
   fulfiled: {
     fontFamily: font.roboto,
-    fontSize: 12,
+    fontSize: font.standardFontSize,
+  },
+  height: {
+    height: 90,
+  },
+  fontMedium: {
+    fontWeight: standardFormat.medium,
   },
 });
 

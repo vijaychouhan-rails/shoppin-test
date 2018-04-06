@@ -5,12 +5,15 @@ import {
   Button,
   Text,
 } from 'native-base';
+import { Dimensions } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import PropTypes from 'prop-types';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import CommonStyles from '../../assets/CommonStyles';
 import constantsText from '../../constants/constantsText';
 import BasicStyles from './BasicStyles';
+
+const { height } = Dimensions.get('window');
 
 const FooterView = props => (
   <Footer
@@ -20,7 +23,7 @@ const FooterView = props => (
       style={BasicStyles.footerTab}
     >
       <Button vertical onPress={Actions.dashboard}>
-        <Icon name="star" size={25} style={props.dashboard ? BasicStyles.iconBlue : BasicStyles.icon} />
+        <Icon name="star" size={height / 30} style={props.dashboard ? BasicStyles.iconBlue : BasicStyles.icon} />
         <Text
           style={props.dashboard ? [BasicStyles.footerText, BasicStyles.marginTop,
             BasicStyles.backgroundColor] : [BasicStyles.footerText, BasicStyles.marginTop]}
@@ -29,7 +32,7 @@ const FooterView = props => (
         </Text>
       </Button>
       <Button vertical onPress={Actions.orders}>
-        <Icon name="circle" size={25} style={props.orders ? BasicStyles.iconBlue : BasicStyles.icon} />
+        <Icon name="circle" size={height / 30} style={props.orders ? BasicStyles.iconBlue : BasicStyles.icon} />
         <Text
           style={props.orders ? [BasicStyles.footerText, BasicStyles.marginTop,
             BasicStyles.backgroundColor] : [BasicStyles.footerText, BasicStyles.marginTop]}
@@ -38,7 +41,7 @@ const FooterView = props => (
         </Text>
       </Button>
       <Button vertical onPress={Actions.products}>
-        <Icon name="square" size={25} style={props.products ? BasicStyles.iconBlue : BasicStyles.icon} />
+        <Icon name="square" size={height / 30} style={props.products ? BasicStyles.iconBlue : BasicStyles.icon} />
         <Text
           style={props.products ? [BasicStyles.footerText, BasicStyles.marginTop,
             BasicStyles.backgroundColor] : [BasicStyles.footerText, BasicStyles.marginTop]}
@@ -47,7 +50,7 @@ const FooterView = props => (
         </Text>
       </Button>
       <Button vertical onPress={Actions.settings}>
-        <Icon name="cog" size={25} style={props.settings ? BasicStyles.iconBlue : BasicStyles.icon} />
+        <Icon name="cog" size={height / 30} style={props.settings ? BasicStyles.iconBlue : BasicStyles.icon} />
         <Text
           style={props.settings ? [BasicStyles.footerText, BasicStyles.marginTop,
             BasicStyles.backgroundColor] : [BasicStyles.footerText, BasicStyles.marginTop]}

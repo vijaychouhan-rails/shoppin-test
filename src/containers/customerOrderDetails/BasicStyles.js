@@ -14,7 +14,7 @@ const BasicStyles = StyleSheet.create({
     marginLeft: 10,
   },
   textStyle: {
-    fontSize: 14,
+    fontSize: font.fontSize,
     fontWeight: font.fontBold,
   },
   marginTop: {
@@ -24,14 +24,16 @@ const BasicStyles = StyleSheet.create({
     marginBottom: 10,
   },
   extraMarginTop: {
-    marginTop: 15,
+    marginTop: standardFormat.extra_margin_top,
   },
   border_style: {
     borderBottomWidth: 1,
+    borderTopWidth: 1,
+    paddingBottom: standardFormat.border_slider_view,
     borderColor: colors.lightGrey,
   },
   sliderView: {
-    height: 200,
+    height: standardFormat.slider_height,
   },
   imageSlider: {
     paddingHorizontal: standardFormat.imageSlider_margin_horizontal,
@@ -41,23 +43,26 @@ const BasicStyles = StyleSheet.create({
   },
   nameStyle: {
     fontFamily: font.roboto,
-    fontSize: 18,
+    fontSize: font.rsFontSize,
   },
   fontStyle: {
     fontFamily: font.roboto,
-    fontSize: 14,
+    fontSize: font.fontSize,
     fontWeight: font.medium,
   },
   fontSize: {
-    fontSize: 14,
+    fontSize: font.fontSize,
   },
   recentOrders: {
     fontFamily: font.roboto,
-    fontSize: 18,
+    fontSize: font.rsFontSize,
     fontWeight: font.fontBold,
   },
   fulfiledSize: {
-    fontSize: 12,
+    fontSize: font.standardFontSize,
+  },
+  alignItems: {
+    justifyContent: 'center',
   },
 });
 

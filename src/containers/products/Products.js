@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, TextInput, ScrollView } from 'react-native';
+import { View, TextInput, ScrollView, Dimensions } from 'react-native';
 import { Container } from 'native-base';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -11,6 +11,7 @@ import CommonStyles from '../../assets/CommonStyles';
 import ProductsList from '../../components/products/products-list';
 import colors from '../../constants/colors';
 
+const { height } = Dimensions.get('window');
 
 class Products extends Component {
   constructor(props) {
@@ -33,7 +34,7 @@ class Products extends Component {
             <Icon
               name="search"
               style={CommonStyles.searchIcon}
-              size={16}
+              size={height / 50}
             />
             <TextInput
               style={CommonStyles.search}
@@ -44,7 +45,7 @@ class Products extends Component {
             <Icon
               name="microphone"
               style={CommonStyles.microphone}
-              size={20}
+              size={height / 40}
             />
           </View>
           <ProductsList productList={this.props.product_list} />

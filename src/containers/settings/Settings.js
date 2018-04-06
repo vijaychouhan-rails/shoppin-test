@@ -27,6 +27,7 @@ class Settings extends Component {
             {constantsText.app_setings}
           </Text>
           <TouchableOpacity
+            activeOpacity={1}
             style={[CommonStyles.directionRow, CommonStyles.spaceBetween, CommonStyles.border,
               BasicStyles.paddingVertical, BasicStyles.marginTop, BasicStyles.marginHorizontal]}
             onPress={() =>
@@ -47,6 +48,7 @@ class Settings extends Component {
             />
           </TouchableOpacity>
           <TouchableOpacity
+            activeOpacity={1}
             style={[CommonStyles.directionRow, CommonStyles.spaceBetween, CommonStyles.border,
               BasicStyles.paddingVertical, BasicStyles.marginHorizontal, BasicStyles.marginTop]}
             onPress={() =>

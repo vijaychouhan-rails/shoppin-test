@@ -4,7 +4,7 @@ import colors from '../../constants/colors';
 
 const BasicStyles = StyleSheet.create({
   textStyle: {
-    fontSize: 14,
+    fontSize: font.normal_font_size,
     fontFamily: font.roboto,
     fontWeight: font.medium,
   },
